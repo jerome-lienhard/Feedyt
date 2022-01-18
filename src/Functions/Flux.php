@@ -114,7 +114,7 @@ class Flux
     {
 
 
-        $page = "<ul>";
+        $page = "";
 
         $this->RSS_RetrieveLinks($url);
         if ($size > 0)
@@ -125,10 +125,14 @@ class Flux
             if ($type == 0) continue;
             $title = $article["title"];
             $link = $article["link"];
-            $page .= "<li><a href=\"$link\">$title</a></li>\n";
+            $page .= "<div class='card mt-3'>
+            <div class='card-body'>
+                <h5 class='card-title'>$title</h5>
+                <a href=\"$link\" class='btn btn-primary'>Voir l'article</a>
+            </div>
+        </div>";
         }
 
-        $page .= "</ul>\n";
 
         return $page;
     }
@@ -163,23 +167,23 @@ class Flux
             $recents = array_slice($this->RSS_Content, $site, $size + 1 - $site);
 
         foreach ($recents as $article) {
-            $type = $article["type"];
-            if ($type == 0) {
-                if ($opened == true) {
-                    $page .= "</ul>\n";
-                    $opened = false;
-                }
-                $page .= "<b>";
-            } else {
-                if ($opened == false) {
-                    $page .= "<ul>\n";
-                    $opened = true;
-                }
-            }
+            // $type = $article["type"];
+            // if ($type == 0) {
+            //     if ($opened == true) {
+            //         $page .= "</ul>\n";
+            //         $opened = false;
+            //     }
+            //     $page .= "<b>";
+            // } else {
+            //     if ($opened == false) {
+            //         $page .= "<ul>\n";
+            //         $opened = true;
+            //     }
+            // }
             $title = $article["title"];
             $link = $article["link"];
             $description = $article["description"];
-            $page .= "<div class='card' style='width: 18rem;'>
+            $page .= "<div class='card mt-3'>
                         <div class='card-body'>
                             <h5 class='card-title'>$title</h5>";
             if ($description != false) {

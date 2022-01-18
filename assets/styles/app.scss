@@ -3,6 +3,7 @@
 @import '~@fortawesome/fontawesome-free/scss/solid';
 @import '~@fortawesome/fontawesome-free/scss/regular';
 @import '~@fortawesome/fontawesome-free/scss/brands';
+
 /*-- HOME--*/
 
 #headerHome {
@@ -94,7 +95,7 @@
     padding-top: 20%;
     background-color: #EDEDED;
     background-size: contain;
-    background-image: url(/images/carouselHome/BeFunky-design.jpg);
+    background-image: url(../image/carouselHome/befunky-design.jpg);
     animation: defilement2 1000s linear infinite;
 }
 

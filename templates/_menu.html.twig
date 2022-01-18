@@ -1,0 +1,39 @@
+ <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+        {% block stylesheets %}
+           
+         
+            {{ encore_entry_link_tags('menu') }} 
+           
+            
+
+        {% endblock %}
+ 
+ <div class="container">
+    <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+      <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
+        <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/></svg>
+      </a>
+
+      <div class="col-md-3 text-end">
+        <button type="button" class="btn btn-outline-primary me-2">Connexion</button>
+        <button type="button" class="btn btn-primary">Deconnexion</button>
+      </div>
+    </header>
+     {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+           
+          
+
+            
+        {% endblock %}
+  </div>
+    </div>
+    </body>
+</html>
+
+  

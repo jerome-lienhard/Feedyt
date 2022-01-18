@@ -1,0 +1,55 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>
+			{% block title %}inscription
+			{% endblock %}
+		</title>
+		<link
+		rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+		{# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+
+		{% block stylesheet %} {{ encore_entry_link_tags('register') }}
+		{% endblock %}
+
+		{% block javascripts %} {{ encore_entry_script_tags('register') }}
+		{% endblock %}
+
+
+		{% block body %}
+
+			<div></div>
+
+			<div class="head">
+                <img src="/image/logo_small.png" alt="logo FeedyTech">
+				<h1>Inscription</h1>
+				
+			</div>
+			<div class="containerRegister">
+
+
+				<div class="txt"> {{ form_start(registrationForm) }} {{ form_errors( registrationForm.email, )}} {{ form_widget(registrationForm.email, {
+                    attr: { placeholder: "Email" }
+                } )}}
+
+					<div class="txt"> {{ form_errors( registrationForm.username, )}} {{ form_widget(registrationForm.username, {
+                    attr: { placeholder: "Pseudo" }
+                } )}}
+					</div> 
+                    <div class="txt">{{ form_errors(registrationForm.plainPassword, {
+        }) }} {{ form_widget(registrationForm.plainPassword, {
+                    attr: { placeholder: "Mot de Passe" }
+                } )}}</div>
+
+					<div>
+						<button type="submit" class="btn">Confirmer</button>
+					</div>
+					<div> {{ form_row(registrationForm.agreeTerms) }}
+					</div> {{ form_end(registrationForm) }}
+
+				</div>
+			</div>
+		</head>
+	</html>
+</div></div><div class="drop drop-1"></div><div class="drop drop-2"></div><div class="drop drop-3"></div><div class="drop drop-4"></div><div class="drop drop-5"></div>{% endblock %}{% include "_footer.html.twig" %}</body></html>

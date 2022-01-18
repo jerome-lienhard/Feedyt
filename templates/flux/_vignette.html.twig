@@ -1,0 +1,29 @@
+<div class="col-4 my-2">
+    <div class="card" style="margin-right: 0;margin-left: 0;">
+        <div class="card-header">
+            {{ produit.titre }}
+        </div>
+        <div class="card-body">
+            <h5 class="card-title"> {{ flux }}</h5>
+
+            
+        </div>
+        <div class="card-footer">
+            <form method="GET" action="{{ path("panier_ajouter_ajax", { id: produit.id }) }}" class="mt-2 form-inline frm-ajouter-panier" id="">
+                <a href="" class="btn btn-primary col-12 col-md-3">Voir</a>
+                <div class="col-12 col-md-2">
+                </div>
+                <div class="col-12 col-md-7 d-flex flex-row justify-content-between px-0">
+                    <input type="number" name="qte" value=1 min=1 max={{ produit.stock }} class="form-control col-7">
+                    <button class="btn btn-info col-4">
+                        <i class="fa fa-cart-plus"></i>
+                    </button> 
+                </div>               
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+

@@ -1,0 +1,183 @@
+/************REGISTER**************/
+@import '~bootstrap/scss/bootstrap';
+
+body {
+  background: linear-gradient(45deg, #dfdfdf,#db4315);
+  height: 100vh;
+  font-family: roboto, sans-serif;
+  
+}
+h1{
+  color: whitesmoke;
+   text-shadow: 2px 2px 4px rgba(0, 0, 0, .2);
+
+}
+
+.containerRegister {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+label{
+  color: #923702;
+}
+/**FORMULAIRE*/
+
+form {
+  background: rgba(255, 255, 255, .3);
+  padding: 3rem;
+  height: 350px;
+  border-radius: 20px;
+  border-left: 1px solid rgba(255, 255, 255, .3);
+  border-top: 1px solid rgba(255, 255, 255, .3);
+  backdrop-filter: blur(10px);
+  box-shadow: 20px 20px 40px -6px rgba(0, 0, 0, .2);
+  text-align: center;
+  min-width: 300px;
+  min-height: 300px;
+}
+/**TEXTES****/
+
+h1{
+    font-size: 40px;
+    text-align: center;
+    padding-top: 30px;
+}
+p {
+  color: white;
+  font-weight: 500;
+  opacity: .7;
+  font-size: 1.4rem;
+  margin-bottom: 60px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, .2);
+  
+}
+  
+a {
+  text-decoration: none;
+  color: #ddd;
+  font-size: 12px;
+}
+
+a:hover {
+  text-shadow: 2px 2px 6px #00000040;
+}
+
+a:active {
+  text-shadow: none;
+}
+/**INPUTS**/
+input { 
+  background: transparent;
+  border: none;
+  border-left: 1px solid rgba(255, 255, 255, .3);
+  border-top: 1px solid rgba(255, 255, 255, .3);
+  padding: 1rem;
+  border-radius: 50px;
+  backdrop-filter: blur(5px);
+  box-shadow: 4px 4px 60px rgba(0, 0, 0, .2);
+  color: white;
+  font-weight: 500;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, .2);
+  transition: all .3s;
+  margin-bottom: 2em;
+}
+input#registration_form_email.form_control{
+  width: 200;
+}
+input:hover,
+input[type="email"]:focus,
+input[type="username"]:focus,
+input[type="checkbox"]:focus,
+input[type="password"]:focus{
+background: rgba(255,255,255,0.1);
+box-shadow: 4px 4px 60px 8px rgba(0,0,0,0.2);
+
+}
+.form-check-input[type=checkbox]{
+  margin: 2px 5px 8px;
+  padding: 5px;
+  backdrop-filter: none;
+}
+
+  
+
+::placeholder {
+color: #fff;
+}
+
+/***SHADOW****/
+.drop {
+  background: rgba(255, 255, 255, .3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 10px;
+  border-left: 1px solid rgba(255, 255, 255, .3);
+  border-top: 1px solid rgba(255, 255, 255, .3);
+  box-shadow: 10px 10px 60px -8px rgba(0,0,0,0.2);
+  position: absolute;
+  transition: all 0.2s ease;
+}
+
+.drop-1 {
+height: 80px; width: 80px;
+top: -20px; left: -40px;
+z-index: -1;
+}
+
+.drop-2 {
+height: 80px; width: 80px;
+bottom: -30px; right: -10px;
+}
+
+.drop-3 {
+height: 100px; width: 100px;
+bottom: 120px; right: -50px;
+z-index: -1;
+}
+
+.drop-4 {
+height: 120px; width: 120px;
+top: -60px; right: -60px;
+}
+
+.drop-5 {
+height: 60px; width: 60px;
+bottom: 170px; left: 90px;
+z-index: -1;
+}
+.btn{
+background-color: #f05800eb;
+  border: none;
+  border-left: 1px solid rgba(255, 255, 255, .3);
+  border-top: 1px solid rgba(255, 255, 255, .3);
+  padding: 1rem;
+  width: 200px;
+  border-radius: 50px;
+  backdrop-filter: blur(5px);
+  box-shadow: 4px 4px 60px rgba(0, 0, 0, .2);
+  color:whitesmoke;
+  font-weight: 500;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, .2);
+  transition: all .3s;
+  margin-bottom: 2em;
+
+}
+
+/*footer*/
+.text-muted{
+  display: flex;
+  justify-content: center;
+  padding: 50px;
+  color: white;
+  font-size: 10px;
+}
+/**image***/
+img{
+  width: 160px;
+ 
+  
+}
+

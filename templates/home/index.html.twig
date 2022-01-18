@@ -1,0 +1,53 @@
+{% extends 'non_connecte.html.twig' %}
+
+{% block title %}Hello HomeController!{% endblock %}
+
+{% block body %}
+<div class="container pageHome">
+  <header>
+    <div class="container-fluid" id="headerHome">
+      <div class="col-md-8">
+     <img src="/image/logo_small.png" alt="logo-feedytech" id="logo">
+      </div>
+      
+    </div>
+
+    
+  </header>
+  <main class="mainhome">
+
+    <div class="container-fluid" id="titre"> 
+
+        <p class="presentation">"Toutes les dernières infos de la tech en temps réel"</p>
+
+    </div>
+    
+
+         <div id="but" class="d-grid gap-2 col-mx-6 ">
+
+            <a href="{{ path("app_register")}}" class="favorite styled" id="inscription">Inscription</a>
+
+            <a href="{{ path("app_login")}}" class="favorite styled" id="connexion">Connexion</a>
+                    
+        </div>
+    
+    
+    <div>
+ 
+    
+    </div>
+
+
+    <div id="deroule" class="container">
+       <div id="carousel">
+        
+       </div>
+    </div>
+ 
+  </main>
+
+  <footer>
+
+  </footer>
+</div>
+{% endblock %}

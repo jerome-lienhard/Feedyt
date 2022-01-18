@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Votre espace{% endblock %}
+
+{% block body %} 
+    <h1>Hello {{ app.user.username }} </h1>
+
+    <h1>Chargement et affichage d'un flux RSS</h1>
+    <hr>
+
+    <form method="GET" action="">
+      
+        <input type="text" name="url" value="">
+      
+	    <button type="submit">Rechercher</button>
+        
+    </form>
+    
+
+    {{ (flux ?? 'pas de flux')|raw }}
+
+
+
+{% endblock %}
+

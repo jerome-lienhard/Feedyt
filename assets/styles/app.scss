@@ -1,3 +1,8 @@
+@import '~bootstrap/scss/bootstrap';
+@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+@import '~@fortawesome/fontawesome-free/scss/solid';
+@import '~@fortawesome/fontawesome-free/scss/regular';
+@import '~@fortawesome/fontawesome-free/scss/brands';
 /*-- HOME--*/
 
 #headerHome {
@@ -88,7 +93,7 @@
     height: 0;
     padding-top: 20%;
     background-color: #EDEDED;
-    background-image: url(/image/carouselHome/BeFunky-design.jpg);
+   
     background-size: contain;
     animation: defilement2 1000s linear infinite;
 }

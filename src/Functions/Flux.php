@@ -179,28 +179,18 @@ class Flux
             $title = $article["title"];
             $link = $article["link"];
             $description = $article["description"];
-            $page .= ?> <div class="card" style="width: 18rem;">
-                            <img src="..." class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                               <?php "<a href="#" class="btn btn-primary">Go somewhere</a>
-                            </div>
-                        </div>
-            <a href=\"$link\">$title</a>";
+            $page .= "<div class='card' style='width: 18rem;'>
+                        <div class='card-body'>
+                            <h5 class='card-title'>$title</h5>";
             if ($description != false) {
-                $page .= "<br>$description";
+                $page .= "<p class='card-text'>$description </p>";
             }
-            $page .= "</li>\n";
 
-            if ($type == 0) {
-                $page .= "</b><br />";
-            }
+            $page .= "<a href=\"$link\" class='btn btn-primary'>Voir l'article</a>
+                        </div>
+                    </div>";
         }
 
-        if ($opened == true) {
-            $page .= "</ul>\n";
-        }
-        return $page . "\n";
+        return $page;
     }
 }

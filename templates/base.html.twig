@@ -9,9 +9,6 @@
            
             {{ encore_entry_link_tags('app') }} 
            
-           
-            
-
         {% endblock %}
 
     
@@ -26,19 +23,10 @@
 		</aside>
         <div class="container">
         {% block body %}
-        
 
-
-
-
-           
             {% block javascripts %}
             {{ encore_entry_script_tags('app') }}
-           
-          
-
-            
-        {% endblock %}
+            {% endblock %}
         {% endblock %}
         </div>
     </body>

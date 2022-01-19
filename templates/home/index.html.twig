@@ -12,9 +12,9 @@
 <div class="container pageHome">
   <header>
     <div class="container-fluid" id="headerHome">
-      <div class="col-md-8">
+      
         <img src="./image/logo_small.png" alt="logo-feedytech" id="logo">
-      </div>
+      
       
     </div>
 
@@ -27,33 +27,60 @@
         <p class="presentation">"Toutes les dernières infos de la tech en temps réel"</p>
 
     </div>
-    
+         <div id="deroule" class="container">
 
-         <div id="but" class="d-grid gap-2 col-mx-6 ">
+            <div id="carousel"></div>
+
+        
+         </div>
+   
+         <div id="but" class="container ">
 
             <a href="{{ path("app_register")}}" class="favorite styled" id="inscription">Inscription</a>
 
             <a href="{{ path("app_login")}}" class="favorite styled" id="connexion">Connexion</a>
                     
         </div>
-    
-    
-    <div>
- 
-    
-    </div>
+  
+        <div id="articles" class="container ">
+         
+          <div class="col-sm-6" id="p1">
+
+            <h2>Suivre les inovations</h2>
+
+            <div class="container" id="paragraphe">
+
+              <p1>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse quam metus, interdum et purus ut, euismod luctus libero. Nunc non augue purus. Duis pulvinar porttitor quam vel feugiat. Aenean eu condimentum orci, vitae posuere sem. Sed tortor massa, maximus sit amet eleifend et, efficitur sit amet ligula. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque elit elit, facilisis non convallis nec, imperdiet in ante. Fusce commodo pharetra purus, at interdum elit. Phasellus in lorem sed tortor hendrerit mattis at non est. Mauris enim nunc, viverra quis risus sed, mattis malesuada tortor. Donec sit amet est eget nisl sagittis scelerisque.</p>
+            </div>
+
+          </div>
 
 
-    <div id="deroule" class="container">
-       <div id="carousel">
-        
-       </div>
+
+          <div class="col-sm-6" id="p2">
+
+            <h2>Listez vos favoris</h2>  
+
+           <div class="container" id="paragraphe">
+
+               <p2>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse quam metus, interdum et purus ut, euismod luctus libero. Nunc non augue purus. Duis pulvinar porttitor quam vel feugiat. Aenean eu condimentum orci, vitae posuere sem. Sed tortor massa, maximus sit amet eleifend et, efficitur sit amet ligula. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque elit elit, facilisis non convallis nec, imperdiet in ante. Fusce commodo pharetra purus, at interdum elit. Phasellus in lorem sed tortor hendrerit mattis at non est. Mauris enim nunc, viverra quis risus sed, mattis malesuada tortor. Donec sit amet est eget nisl sagittis scelerisque.</p>
+
+            </div>   
+
+          </div>
+           
+                    
+        </div>
+  
+    
+   
+
+
+    
     </div>
  
   </main>
 
-  <footer>
-
-  </footer>
+  
 </div>
 {% endblock %}

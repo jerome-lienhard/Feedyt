@@ -13,77 +13,41 @@
 		{% block javascripts %} {{ encore_entry_script_tags('espace') }}
 		{% endblock %}
 		
-
+	</head>
 
 
 
 {% block body %} 
-<nav class="nav">
-  
-  <a href="#" class="nav-item" active-color="red">Connexion</a>
-  <a href="#" class="nav-item" active-color="rebeccapurple">Recherche</a>
-  <span class="nav-indicator"></span>
-</nav>
 
-    <h1>Hello {{ app.user.username }} </h1>
-
-    <div class="bg-light row d-flex justify-content-center">
-	
-     	
-            <div class="col-md-10 mt-5 pt-5">
-             	<div class="row shadow p-3 mb-5 bg-white rounded">
-                 	<div class="col-sm-4 bg-secondary rounded-left">
-        		        <div class="card-block text-center text-white">
-                		    <i class="fas fa-user-tie fa-7x mt-5"></i>
-							<div class="col-sm-8">
-                    		<h2 class="font-weight-bold mt-4">{{app.user.username}}</h2>
-							</div>
-							<div class="col-sm-8">
-                           		<h2 class="text-center">{{app.user.email}}</h2>
-                        	</div>
-	
-
-                		</div>
-            		</div>
-            		<div class="col-sm-8 bg-contain rounded-right">
-                    	<h3 class="mt-3 text-center">Information</h3>
-                    	<hr class="bg-primary">
-                   		<div class="row">
-                    	</div>
-                    		<h4 class="mt-3">Vos Liens</h4>
-                    		<hr class="bg-secondary">
-                   		<div class="row">
-                        	<div class="col-sm-6">
-                           		<p class="font-weight-bold">Liste des liens</p>
-                          	  	<h6 class="text-muted"></h6>
-                        	</div>
-                    	</div>
-              		</div>
-             	</div>
-            </div>
-        
+  <body>
+	  
+   <div class="container">
 
 
-    <h1>Chargement et affichage d'un flux RSS</h1>
+    <h1>Tes dernières infos</h1>
     <hr>
+	<h2>Ici cherche des nouveaux flux !</h2>
     
 
-    <form method="GET" action="">
+    <form method="GET" action="" class="d-flex">
       
-        <input type="text" name="url" value="">
+        <input type="text" class="form-control" name="url" value="">
       
-	    <button type="submit">Rechercher</button>
+	    <button type="submit" class="btn btn-outline-success">Rechercher</button>
         
+		<a href="?effacer" class="btn btn-outline-danger">Effacer</a>
     </form>
     
+	<div>
+	
+    {{ (flux ?? '<p class="mt-3">Allez ne sois pas timide 😉</p>')|raw }}
+	</div>
 
-    {{ (flux ?? 'pas de flux')|raw }}
-
-
+</div>
 
 {% endblock %}
 
-</div>
+
 		</body>
-	</head>
+	
 </html>

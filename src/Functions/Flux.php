@@ -127,8 +127,8 @@ class Flux
             $link = $article["link"];
             $page .= "<div class='card mt-3'>
             <div class='card-body'>
-                <h5 class='card-title'>$title</h5>
-                <a href=\"$link\" class='btn btn-primary'>Voir l'article</a>
+                <h5 class='card-title fw-bold'>$title</h5><hr>
+                <div class='text-center w-100'><a href=\"$link\" class='btn btn-outline-warning w-100'>Voir l'article</a></div>
             </div>
         </div>";
         }
@@ -185,12 +185,12 @@ class Flux
             $description = $article["description"];
             $page .= "<div class='card mt-3'>
                         <div class='card-body'>
-                            <h5 class='card-title'>$title</h5>";
+                            <h5 class='card-title fw-bold'>$title</h5><hr>";
             if ($description != false) {
-                $page .= "<p class='card-text'>$description </p>";
+                $page .= "<p class='card-text d-flex align-items-center'>$description </p>";
             }
 
-            $page .= "<a href=\"$link\" class='btn btn-primary'>Voir l'article</a>
+            $page .= "<div class='text-center w-100'><a href=\"$link\" class='btn btn-outline-warning w-100'>Voir l'article</a></div>
                         </div>
                     </div>";
         }

@@ -11,6 +11,7 @@
 		{% endblock %}
 
 		{% block javascripts %} {{ encore_entry_script_tags('espace') }}
+
 		{% endblock %}
 		
 	</head>
@@ -20,13 +21,17 @@
 {% block body %} 
 
   <body>
-	  
+ 	<aside class="bg-light">
+	  {% include "_menu_left.html.twig" %}
+	</aside>
    <div class="container">
 
 
     <h1>Tes dernières infos</h1>
+
+
     <hr>
-	<h2>Ici cherche des nouveaux flux !</h2>
+	<h2>Ici découvre des nouveaux flux !</h2>
     
 
     <form method="GET" action="" class="d-flex">
@@ -35,7 +40,7 @@
       
 	    <button type="submit" class="btn btn-outline-success">Rechercher</button>
         
-		<a href="?effacer" class="btn btn-outline-danger">Effacer</a>
+		<a href=" {{path("espace_effacer_recherche")}} " class="btn btn-outline-danger">Effacer</a>
     </form>
     
 	<div>

@@ -14,14 +14,14 @@
         {% endblock %}
  
  <div class="container">
-    <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
-      <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
-        <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/></svg>
-      </a>
-
-     <div>
-     <img src="../image/logo_small.png" alt=""></div>
+    <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-between border-bottom">
+      
+    <a class="navbar-brand" href="{{path ("home")}}">
+    <img src="../image/logo_small.png" class="w-50 h-5 m-auto" alt="logo de feedytech" id="logo"></a>
+  
       <div class="col-md-5 text-end">
+       
+     
 
       <a href="{{path ("home")}}"class="btn btn-primary me-2">Accueil</a>
       <a href="{{path ("app_login")}}" class="btn btn-primary me-2">Connexion</a>

@@ -15,8 +15,8 @@
     {% endif %}
 
     {% if app.user %}
-        <div class="mb-3">
-            Tu es connecté en tant que {{ app.user.username }}, <a href="{{ path('app_logout') }}">Deconnexion</a>
+        <div class="mb-3 font-weight-bolder  font-size: 14px">
+            Bonjour {{ app.user.username }}, 
         </div>
     {% endif %}
 
@@ -33,15 +33,15 @@
           <!-- Email input -->
           <div class="form-outline mb-4">
             <input type="email" id="inputEmail"  value="{{ last_username }}" name="email" class="form-control form-control-lg"
-              placeholder="Enter a valid email address" autocomplete="email" required autofocus/>
-            <label class="form-label" for="inputEmail" >Votre email</label>
+              placeholder="Adresse mail" autocomplete="email" required autofocus/>
+            
           </div>
 
           <!-- Password input -->
           <div class="form-outline mb-3">
             <input type="password" id="inputPassword" name="password" class="form-control form-control-lg"
-              placeholder="Enter password" autocomplete="current-password" required/>
-            <label class="form-label" for="inputPassword">Mot de passe</label>
+              placeholder="Mot de passe" autocomplete="current-password" required/>
+            
           </div>
              <input type="hidden" name="_csrf_token"
            value="{{ csrf_token('authenticate') }}">
@@ -53,8 +53,8 @@
           <div class="text-center text-lg-start mt-4 pt-2">
             <button type="submit" class="btn btn-primary btn-lg"
               style="padding-left: 2.5rem; padding-right: 2.5rem;">Connexion</button>
-            <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <a href="{{path ("app_register")}}"
-                class="link-danger">Register</a></p>
+            <p class="small fw-bold mt-2 pt-1 mb-0">Pas encore inscrit? <a href="{{path ("app_register")}}"
+                class="link-primary text-decoration-non">Register</a></p>
           </div>
 
         

@@ -27,4 +27,11 @@ class EspaceController extends AbstractController
         }
         return $this->render('espace/index.html.twig', ["flux" => $flux]);
     }
+
+    #[Route('/espace/effacer-recherche', name: 'espace_effacer_recherche')]
+    public function effacer_recherche(): Response
+    {
+
+        return $this->redirectToRoute("espace");
+    }
 }

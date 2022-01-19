@@ -128,7 +128,7 @@ class Flux
             $page .= "<div class='card mt-3'>
             <div class='card-body'>
                 <h5 class='card-title fw-bold'>$title</h5><hr>
-                <div class='text-center w-100'><a href=\"$link\" class='btn btn-outline-warning w-100'>Voir l'article</a></div>
+                <div class='text-center w-100'><a href=\"$link\" class='btn styled w-100'>Voir l'article</a></div>
             </div>
         </div>";
         }
@@ -190,7 +190,7 @@ class Flux
                 $page .= "<p class='card-text d-flex align-items-center'>$description </p>";
             }
 
-            $page .= "<div class='text-center w-100'><a href=\"$link\" class='btn btn-outline-warning w-100'>Voir l'article</a></div>
+            $page .= "<div class='text-center w-100'><a href=\"$link\" class='btn styled w-100'>Voir l'article</a></div>
                         </div>
                     </div>";
         }

@@ -2,6 +2,12 @@
 
 {% block title %}Log in!{% endblock %}
 
+{% block stylesheet %} {{ encore_entry_link_tags('register') }}
+		{% endblock %}
+
+		{% block javascripts %} {{ encore_entry_script_tags('register') }}
+		{% endblock %}
+
 {% block body %}
 <form method="post">
     {% if error %}
@@ -18,7 +24,7 @@
   <div class="container-fluid h-custom">
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col-md-9 col-lg-6 col-xl-5">
-        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp" class="img-fluid"
+        <img src="https://static.vecteezy.com/ti/vecteur-libre/p1/4244697-illustration-de-la-technologie-d-intelligence-artificielle-analyse-des-programmes-en-affichant-des-donnees-statistiques-de-apps-vector-design-for-landing-page-web-website-mobile-apps-poster-flyer-ui-ux" class="img-fluid"
           alt="Sample image">
       </div>
       <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">

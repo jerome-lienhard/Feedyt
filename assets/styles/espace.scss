@@ -1,11 +1,42 @@
 @import '~bootstrap/scss/bootstrap';
-
-@import '~bootstrap/scss/bootstrap';
 @import '~@fortawesome/fontawesome-free/scss/fontawesome';
 @import '~@fortawesome/fontawesome-free/scss/solid';
 @import '~@fortawesome/fontawesome-free/scss/regular';
 @import '~@fortawesome/fontawesome-free/scss/brands';
+@import url('https://fonts.googleapis.com/css?family=DM+Sans:500,700&display=swap');
+* {
+    box-sizing: border-box;
+    font-family: roboto, sans-serif;
+}
 
+img {
+    width: 80%;
+    border-radius: 5px;
+}
 
+.styled {
+    background-color: #f05800eb;
+    border: none;
+    border-left: 1px solid rgba(255, 255, 255, .3);
+    border-top: 1px solid rgba(255, 255, 255, .3);
+    padding: 1rem;
+    width: 200px;
+    border-radius: 50px;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    -moz-backdrop-filter: blur(5px);
+    box-shadow: 4px 4px 60px rgba(0, 0, 0, .2);
+    color: whitesmoke;
+    font-weight: 500;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, .2);
+    transition: all .3s;
+    margin-bottom: 2em;
+}
 
-  
+.styled:hover {
+    background-color: rgba(255, 0, 0, 1);
+}
+
+.styled:active {
+    box-shadow: inset -2px -2px 3px rgba(255, 255, 255, .6), inset 2px 2px 3px rgba(0, 0, 0, .6);
+}

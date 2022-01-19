@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="UTF-8">
@@ -14,35 +15,42 @@
         
 		{% endblock %}
 		
-
+	</head>
 
 
 {% include "nav.html.twig" %}
 
 {% block body %} 
 
-  
-    
-    <h1>Chargement et affichage d'un flux RSS</h1>
+  <body>
+	  
+   <div class="container">
+
+
+    <h1>Tes dernières infos</h1>
     <hr>
+	<h2>Ici cherche des nouveaux flux !</h2>
     
 
-    <form method="GET" action="">
+    <form method="GET" action="" class="d-flex">
       
-        <input type="text" name="url" value="">
+        <input type="text" class="form-control" name="url" value="">
       
-	    <button type="submit">Rechercher</button>
+	    <button type="submit" class="btn btn-outline-success">Rechercher</button>
         
+		<a href="?effacer" class="btn btn-outline-danger">Effacer</a>
     </form>
     
+	<div>
+	
+    {{ (flux ?? '<p class="mt-3">Allez ne sois pas timide 😉</p>')|raw }}
+	</div>
 
-    {{ (flux ?? 'pas de flux')|raw }}
-
-
+</div>
 
 {% endblock %}
 
-</div>
+
 		</body>
-	</head>
+	
 </html>

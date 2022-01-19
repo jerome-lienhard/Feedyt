@@ -3,8 +3,14 @@
 @import '~@fortawesome/fontawesome-free/scss/solid';
 @import '~@fortawesome/fontawesome-free/scss/regular';
 @import '~@fortawesome/fontawesome-free/scss/brands';
-/*-- HOME--*/
 
+/*-- HOME--*/
+body {
+    
+    height: 200vh;
+    font-family: roboto, sans-serif;
+    
+  }
 #headerHome {
     height: 100%;
     width: auto;
@@ -12,28 +18,41 @@
 
 #logo {
     display: block;
+    padding-top: 50px;
     margin-left: auto;
     margin-right: auto;
     max-width: 300px;
-    height: auto;
-}
+      height: auto;}
+  
 
 .mainhome {
     margin-top: 50px;
     text-align: center;
     font-size: larger;
+    
 }
 
 .entete {
     color: rgb(73, 68, 68);
 }
 
-#titre {
-    display: flex;
-    justify-items: center;
+.presentation {
+    
+    margin-top: 50px;
+    width: 100%;
+    height: 50%;
+    font-size: 50px;
+    color: rgb(75, 73, 73);
+  
 }
 
+
+
+
 #but {
+    align-items: center;
+    justify-content: center;
+   
     height: 0;
     width: auto;
     padding: 5%;
@@ -46,13 +65,6 @@
     margin: 0 20px 20px 20px;
 }
 
-.presentation {
-    margin-top: 50px;
-    width: 100%;
-    height: 50%;
-    font-size: 50px;
-    color: dimgrey;
-}
 
 .styled {
     background-color: #f05800eb;
@@ -71,30 +83,66 @@
     text-shadow: 2px 2px 4px rgba(0, 0, 0, .2);
     transition: all .3s;
     margin-bottom: 2em;
+    text-decoration: none;
+    
+
+    
 }
 
 .styled:hover {
-    background-color: rgba(255, 0, 0, 1);
+    background-color: rgb(170, 162, 148);
+    color:white;
+   
+
 }
 
 .styled:active {
     box-shadow: inset -2px -2px 3px rgba(255, 255, 255, .6), inset 2px 2px 3px rgba(0, 0, 0, .6);
 }
 
+#articles{
+    display: flex;
+   padding: 0%;
+    
+}
+
+
+
+#p1{
+    padding: 20px;
+    text-justify: distribute
+}
+
+#p2{
+    padding: 20px;
+    
+    
+    text-justify: distribute
+}
+
+#paragraphe{
+    padding: 12px;
+    border: 1px solid rgb(116, 113, 113);
+    border-radius: 10px;
+    box-shadow: 0px 5px 10px #777;
+}
+
 #deroule {
-    max-width: 960px;
+    max-width: 1200px;
     overflow: hidden;
     margin: 50px auto;
-    box-shadow: 0px 0px 10px #777;
+    border-radius: 5px;
+    box-shadow: 0px 5px 10px #777;
 }
 
 #carousel {
     width: 30000%;
     height: 0;
-    padding-top: 20%;
+    padding-top: 10%;
     background-color: #EDEDED;
     background-size: contain;
-    animation: defilement2 1000s linear infinite;
+    background-image: url(../image/carouselHome/befunky-design.jpg);
+    animation: defilement2 2800s linear infinite;
 }
 
 @keyframes defilement2 {

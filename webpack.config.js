@@ -23,7 +23,7 @@ Encore
     .addEntry('app', './assets/app.js')
     .addEntry('register', './assets/register.js')
     .addEntry('espace', './assets/espace.js')
-    .addEntry('menu', './assets/menu.js')
+    .addEntry('nav', './assets/nav.js')
 
 
 
@@ -75,6 +75,10 @@ Encore
 //.enableIntegrityHashes(Encore.isProduction())
 
 // uncomment if you're having problems with a jQuery plugin
-.autoProvidejQuery();
+.autoProvidejQuery().autoProvideVariables({
+    $: 'jquery',
+    jQuery: 'jquery',
+    'window.jQuery': 'jquery'
+}) 
 
 module.exports = Encore.getWebpackConfig();

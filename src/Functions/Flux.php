@@ -142,7 +142,6 @@ class Flux
     public function RSS_Display($url, $size = 15, $site = 0)
     {
 
-
         $opened = false;
         $page = "";
         $site = (intval($site) == 0) ? 1 : 0;

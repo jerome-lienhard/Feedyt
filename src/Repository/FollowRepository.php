@@ -19,22 +19,21 @@ class FollowRepository extends ServiceEntityRepository
         parent::__construct($registry, Follow::class);
     }
 
-    // /**
-    //  * @return Follow[] Returns an array of Follow objects
-    //  */
-    /*
-    public function findByExampleField($value)
+    /**
+     * @return Follow[] Returns an array of Follow objects
+     */
+
+    public function findByUserId($value)
     {
         return $this->createQueryBuilder('f')
-            ->andWhere('f.exampleField = :val')
+            ->where('f.user = :val')
             ->setParameter('val', $value)
             ->orderBy('f.id', 'ASC')
-            ->setMaxResults(10)
+            ->setMaxResults(50)
             ->getQuery()
-            ->getResult()
-        ;
+            ->getResult();
     }
-    */
+
 
     /*
     public function findOneBySomeField($value): ?Follow

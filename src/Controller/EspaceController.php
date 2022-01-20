@@ -28,12 +28,7 @@ class EspaceController extends AbstractController
         $user = $this->getUser();
         $actu = $user->getFollows();
         $news = new Flux;
-<<<<<<< HEAD
-        $Tabnews=NULL;
-        
-=======
         $Tabnews = Null;
->>>>>>> 5e99f1c1bc9151c1205d924801a5e7f3b3548ca6
 
         foreach ($actu as $flu) {
             $affiche = $flu->getSite()->getSourceUrl();

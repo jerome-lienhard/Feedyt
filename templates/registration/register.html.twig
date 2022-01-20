@@ -18,18 +18,48 @@
     
 
 		{% block body %}
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+        <a class="navbar-brand"  href="{{path ("home")}}">
+    <img src="../image/logo_small.png" class="w-25 h-3 m-auto" alt="logo de feedytech" id="logo"></a>
+    </a>
+        <button class="navbar-toggler btn" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>    
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0" id="liens">
+         
+                            <li class="nav-item mr-1">
+                                <a href="{{path ("home")}}"class="btn px-3 me-2 nav-link">Accueil</a>
+                            </li>
+                            <li class="nav-item mr-1">
+                                <a href="{{path ("app_login")}}" class="btn me-2 nav-link">Connexion</a>
+                            </li>
+                            <li class="nav-item mr-1">
+                                <a href="{{path ("app_logout")}}"class="btn me-2 nav-link">Deconnexion</a>
+                            </li>
+                        </ul>
+
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item"href="{{path ("home")}}">Accueil</a></li>
+                <li><a class="dropdown-item" href="{{path ("app_login")}}">Connexion</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item"href="{{path ("app_logout")}}">Deconnexion</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+    
+      </div>
+    </div> <!-- /container -->
+
   <div class="container">
     <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
-      <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
-        <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/></svg>
-      </a>
+      
 
-      <div class="col-md-3 text-end">
-      <a href="{{path ("home")}}"class="btn btn-primary me-2">Accueil</a>
-      <a href="{{path ("app_login")}}" class="btn btn-primary me-2">Connexion</a>
-  
-      </div>
-					<section class="vh-100" >
+	<section class="vh-100" >
   <div class="container h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col-lg-12 col-xl-11">
@@ -90,7 +120,8 @@
               </div>
               <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
 
-                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp" class="img-fluid" alt="Sample image">
+                <img src="https://static.vecteezy.com/ti/vecteur-libre/p1/4244697-illustration-de-la-technologie-d-intelligence-artificielle-analyse-des-programmes-en-affichant-des-donnees-statistiques-de-apps-vector-design-for-landing-page-web-website-mobile-apps-poster-flyer-ui-ux" class="img-fluid"
+          alt="Sample image">
 
               </div>
             </div>
@@ -103,5 +134,6 @@
 
 					
 {% endblock %}
+</div>
 {% include "_footer.html.twig" %}
 </body></html>

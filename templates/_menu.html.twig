@@ -14,94 +14,43 @@
             {{ encore_entry_script_tags('app') }}
       
       <header>
-      <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <!-- Container wrapper -->
-  <div class="container-fluid">
-    <!-- Toggle button -->
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-mdb-toggle="collapse"
-      data-mdb-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <i class="fas fa-bars"></i>
-    </button>
+       <!-- Fixed navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+        <a class="navbar-brand"  href="{{path ("home")}}">
+    <img src="../image/logo_small.png" class="w-25 h-3 m-auto" alt="logo de feedytech" id="logo"></a>
+    </a>
+        <button class="navbar-toggler btn" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>    
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0" id="liens">
+         
+                            <li class="nav-item mr-1">
+                                <a href="{{path ("home")}}"class="btn px-3 me-2 nav-link">Accueil</a>
+                            </li>
+                            
+                            <li class="nav-item mr-1">
+                                <a href="{{path ("app_logout")}}"class="btn me-2 nav-link">Deconnexion</a>
+                            </li>
+                        </ul>
 
-    <!-- Collapsible wrapper -->
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <!-- Navbar brand -->
-      <a class="navbar-brand mt-2 mt-lg-0" href="#">
-        <img
-          src="../image/logo_small.png" class="w-50 h-5 m-auto" alt="logo de feedytech" id="logo"
-          height="15"
-          alt="MDB Logo"
-          loading="lazy"
-        />
-      </a>
-      <!-- Left links -->
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link" href="#">Accueil</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Connexion</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Deconnexion</a>
-        </li>
-      </ul>
-      <!-- Left links -->
-    </div>
-    <!-- Collapsible wrapper -->
-
-    <!-- Right elements -->
-    <div class="d-flex align-items-center">
-     
-      <a class="nav-item" href="{{path ("home")}}"class="btn btn-primary px-3 me-2">Accueil</a>
-      <a class="nav-item" href="{{path ("app_login")}}" class="btn btn-primary me-2">Connexion</a>
-      <a class="nav-item" href="{{path ("app_logout")}}"class="btn btn-primary me-2">Deconnexion</a> 
-
-      <!-- Notifications -->
-      <div class="dropdown">
-      
-          
-        <ul
-          class="dropdown-menu dropdown-menu-end"
-          aria-labelledby="navbarDropdownMenuLink"
-        >
-          <li>
-            <a class="dropdown-item" href="{{path ("home")}}"class="btn btn-primary px-3 me-2">Accueil</a>
-          </li>
-          <li>
-            <a class="dropdown-item" href="{{path ("app_login")}}" class="btn btn-primary me-2">Connexion</a>
-          </li>
-          <li>
-            <a class="dropdown-item" href="{{path ("app_logout")}}"class="btn btn-primary me-2">Deconnexion</a> 
-          </li>
-        </ul>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item"href="{{path ("home")}}">Accueil</a></li>
+                
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item"href="{{path ("app_logout")}}">Deconnexion</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div><!--/.nav-collapse -->
       </div>
-    <!-- Right elements -->
-  </div>
-  <!-- Container wrapper -->
-</nav>
-<!-- Navbar -->
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
+    </nav>
+    
+      </div>
+    </div> <!-- /container -->
+
       </header>
-          
 
             
         {% endblock %}

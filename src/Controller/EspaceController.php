@@ -12,6 +12,7 @@ use App\Repository\MembreRepository;
 use App\Repository\SiteRepository;
 use DateTime;
 use Doctrine\ORM\EntityManagerInterface;
+use phpDocumentor\Reflection\Types\Null_;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -27,6 +28,7 @@ class EspaceController extends AbstractController
         $user = $this->getUser();
         $actu = $user->getFollows();
         $news = new Flux;
+        $Tabnews = Null;
 
         foreach ($actu as $flu) {
             $affiche = $flu->getSite()->getSourceUrl();

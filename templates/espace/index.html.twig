@@ -2,6 +2,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>{% block title %}Votre espace{% endblock %}
 		</title>
 		<link
@@ -20,65 +21,59 @@
 {% set url = ""%}
 {% block body %} 
 
-  <body>
-   <div class="container">
- 	<aside class="bg-light">
-	  {% include "_menu_left.html.twig" %}
-	</aside>
-  
+  	<body>
+   		<div class="container">
+ 			<aside >
+	  			{% include "_menu_left.html.twig" %}
+			</aside>
 
+			<h1>Tes dernières infos</h1>
+			{% if news is defined %}
+				{% for new in news %}
+					{{new|raw}}
+				{% endfor %}
+			{% endif %}
 
-    <h1>Tes dernières infos</h1>
+			<hr>
+			<h2>Ici découvre des nouveaux flux !</h2>
+			
 
+			<form method="GET" action="" class="d-flex">
+			
+				<input type="text" class="form-control" name="url" placeholder="Tape l'url du site que tu souhaite suivre ici. Exemple : https://www.developpez.com/" value="{{url}}">
+			
+				<button type="submit" class="btn btn-outline-success">Rechercher</button>
+				
+				<a href=" {{path("espace_effacer_recherche")}} " class="btn btn-outline-danger">Effacer</a>
 
-    <hr>
-	<h2>Ici découvre des nouveaux flux !</h2>
-    
+			</form>
+			{# Si l'utilisateur veut ajouter le flux à sa liste #}
+			{% if form is defined %}
+			<div class="form-control mt-3">
+			<h3>Ajouter un flux à ma liste</h3>
+				{{ form_start(form) }}
+				{{ form_widget(form) }}
+				<button class="btn styled w-25 mt-3">{{ button_label|default('Save') }}</button>
+				{{ form_end(form) }}
+			</div>
+				{{flux|raw}}
 
-    <form method="GET" action="" class="d-flex">
-      
-        <input type="text" class="form-control" name="url" value="{{url}}">
-      
-	    <button type="submit" class="btn btn-outline-success">Rechercher</button>
-        
-		<a href=" {{path("espace_effacer_recherche")}} " class="btn btn-outline-danger">Effacer</a>
+			{% endif %}
+
+			{# Si l'utilisateur affiche le flux le bouton ajouter apparait #}
+			<div>
+			{% if flux %}
+				<form method="GET" action="">
+					<input type="hidden" name="ajout_url" value="{{(url_ajout ?? url)}}">
+					<button type="submit" class="btn btn-outline-primary">Ajouter à ma liste</button> 
+				</form>
+				{{flux|raw}}
+			{% else %}
+				<p class="mt-3"> FeedyTech t'accompagne dans ta veille 😉</p>
+			{% endif %}
+			</div>
 		
-    </form>
-
-  	{% if form is defined %}
-	<div class="form-control mt-3">
-	  <h3>Ajouter un flux à ma liste</h3>
-		{{ form_start(form) }}
-    	{{ form_widget(form) }}
-    	<button class="btn styled w-25 mt-3">{{ button_label|default('Save') }}</button>
-		{{ form_end(form) }}
-	</div>
-		{{flux}}
-
-  	{% endif %}
-	<div>
-	
-	{% if flux %}
-
-	
-		
-		<form method="GET" action="">
-			<input type="hidden" name="ajout_url" value="{{(url_ajout ?? url)}}">
-			<button type="submit" class="btn btn-outline-primary">Ajouter à ma liste</button> 
-		</form>
-		{{flux|raw}}
-	{% else %}
-		<p class="mt-3">Allez ne sois pas timide 😉</p>
-
-	{% endif %}
-
-	</div>
-
-</div>
-
-{% endblock %}
-
-
-		</body>
-	
+		</div>
+			{% endblock %}
+	</body>
 </html>

@@ -17,14 +17,15 @@
 		
 	</head>
 
-
+{% set url = ""%}
 {% block body %} 
 
   <body>
+   <div class="container">
  	<aside class="bg-light">
 	  {% include "_menu_left.html.twig" %}
 	</aside>
-   <div class="container">
+  
 
 
     <h1>Tes dernières infos</h1>
@@ -36,16 +37,41 @@
 
     <form method="GET" action="" class="d-flex">
       
-        <input type="text" class="form-control" name="url" value="">
+        <input type="text" class="form-control" name="url" value="{{url}}">
       
 	    <button type="submit" class="btn btn-outline-success">Rechercher</button>
         
 		<a href=" {{path("espace_effacer_recherche")}} " class="btn btn-outline-danger">Effacer</a>
+		
     </form>
-    
+
+  	{% if form is defined %}
+	<div class="form-control mt-3">
+	  <h3>Ajouter un flux à ma liste</h3>
+		{{ form_start(form) }}
+    	{{ form_widget(form) }}
+    	<button class="btn styled w-25 mt-3">{{ button_label|default('Save') }}</button>
+		{{ form_end(form) }}
+	</div>
+		{{flux}}
+
+  	{% endif %}
 	<div>
 	
-    {{ (flux ?? '<p class="mt-3">Allez ne sois pas timide 😉</p>')|raw }}
+	{% if flux %}
+
+	
+		
+		<form method="GET" action="">
+			<input type="hidden" name="ajout_url" value="{{(url_ajout ?? url)}}">
+			<button type="submit" class="btn btn-outline-primary">Ajouter à ma liste</button> 
+		</form>
+		{{flux|raw}}
+	{% else %}
+		<p class="mt-3">Allez ne sois pas timide 😉</p>
+
+	{% endif %}
+
 	</div>
 
 </div>

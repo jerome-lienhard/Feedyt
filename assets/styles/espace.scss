@@ -15,21 +15,26 @@ img {
 }
 
 .styled {
-    background-color: #f05800eb;
+    background-color: #7465DA;
     border: none;
+    border-left: 1px solid rgba(255, 255, 255, .3);
+    border-top: 1px solid rgba(255, 255, 255, .3);
     padding: 0.5rem;
-    border-radius: 10px;
+    border-radius: 2px;
     backdrop-filter: blur(5px);
-    box-shadow: 4px 4px 60px rgba(0, 0, 0, 0.2);
+    -webkit-backdrop-filter: blur(5px);
+    -moz-backdrop-filter: blur(5px);
+    box-shadow: 4px 4px 60px rgba(0, 0, 0, .2);
     color: whitesmoke;
     font-weight: 500;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, .2);
     transition: all .3s;
+    margin-bottom: 2em;
     text-decoration: none;
 }
 
 .styled:hover {
-    background-color: #f0580085;
+    background-color: rgb(170, 162, 148);
     color: white;
 }
 

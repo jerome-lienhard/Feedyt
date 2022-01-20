@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Follow{% endblock %}
+
+{% block body %}
+    <h1>Edit Follow</h1>
+
+    {{ include('follow/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('follow_index') }}">back to list</a>
+
+    {{ include('follow/_delete_form.html.twig') }}
+{% endblock %}

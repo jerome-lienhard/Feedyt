@@ -7,7 +7,7 @@
 /*-- HOME--*/
 body {
     
-    height: 175vh;
+    height: 100vh;
     font-family: roboto, sans-serif;
     
   }
@@ -47,17 +47,16 @@ body {
 }
 
 
-
-
 #but {
-    align-items: center;
-    justify-content: center;
+    
    
     height: 0;
     width: auto;
     padding: 5%;
     margin-bottom: 5%;
 }
+
+
 #centre{
     height:20px;
    
@@ -71,14 +70,15 @@ body {
 }
 
 
-.styled {
+
+#styled {
     background-color:#7465DA;
     border: none;
     border-left: 1px solid rgba(255, 255, 255, .3);
     border-top: 1px solid rgba(255, 255, 255, .3);
     padding: 1rem;
-    width: 100px;
-    border-radius: 2px;
+    width: 120px;
+    border-radius: 5px;
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     -moz-backdrop-filter: blur(5px);
@@ -87,24 +87,29 @@ body {
     font-weight: 500;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, .2);
     transition: all .3s;
-    margin-bottom: 2em;
+    
+ 
+    
     text-decoration: none;
     
 
     
 }
 
-.styled:hover {
+#styled:hover {
     background-color: rgb(170, 162, 148);
     color:white;
    
 
 }
 
-.styled:active {
+#styled:active {
     box-shadow: inset -2px -2px 3px rgba(255, 255, 255, .6), inset 2px 2px 3px rgba(0, 0, 0, .6);
 }
 
+h2{
+    margin-top: 10px;
+}
 #articles{
     display: flex;
     padding: 0%;

@@ -7,58 +7,34 @@
      {% block javascripts %}
             {{ encore_entry_script_tags('app') }}
            {% endblock %}  
- <footer >
-     <div class="container py-5">
-         <div class="row py-3">
-             <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
-                 <h6 class="text-uppercase font-weight-bold mb-4">A propos</h6>
-                 <ul class="list-unstyled mb-0">
-                     <li class="mb-2"><a href="#" class="text-muted">Organisation</a></li>
-                     <li class="mb-2"><a href="#" class="text-muted">Projets</a></li>
-                     
-                 </ul>
-             </div>
-             <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
-                 <h6 class="text-uppercase font-weight-bold mb-4">Besoin d'aide</h6>
-                 <ul class="list-unstyled mb-0">
-                     <li class="mb-2"><a href="#" class="text-muted">Service technique</a></li>
-                     <li class="mb-2"><a href="#" class="text-muted">Cavacava</a></li>
-                    
-                 </ul>
-             </div>
-             <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
-                 <h6 class="text-uppercase font-weight-bold mb-4">Mentions légales</h6>
-                 <ul class="list-unstyled mb-0">
-                     <li class="mb-2"><a href="#" class="text-muted">CGU</a></li>
-                     <li class="mb-2"><a href="#" class="text-muted">Pass vaccinal</a></li>
-                     
-                 </ul>
-             </div>
-             <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
-                 <h6 class="text-uppercase font-weight-bold mb-4">Nos partenaires</h6>
-                 <ul class="list-unstyled mb-0">
-                     <li class="mb-2"><a href="https://www.wf3.fr/" class="text-muted">WebForce3</a></li>
-                     <li class="mb-2"><a href="https://www.youtube.com/watch?v=NzC5qlbSNAs" class="text-muted">Mars attack</a></li>
-                  
-                 </ul>
-             </div>
-             <div class="col-lg-4 col-md-6 mb-lg-0">
-                 <h6 class="text-uppercase font-weight-bold mb-4">Suivez nous sur:</h6>
-                 <p class="text-muted mb-4">mail: feedytech@gitmerde.approut</p>
-                 <ul class="list-inline mt-4">
-                     <li class="list-inline-item"><a href="https://interplay.fr/twitter-clone/" target="_blank" title="twitter"><i class="fab fa-2x fa-twitter"></i></a></li>
-                     <li class="list-inline-item"><a href="https://www.facebook.com/Brest.fr.metropole/" target="_blank" title="facebook"><i class="fab fa-2x fa-facebook-f"></i></a></li>
-                     <li class="list-inline-item"><a href="https://www.instagram.com/?hl=fr" target="_blank" title="instagram"><i class="fab fa-2x fa-instagram"></i></a></li>
-                     <li class="list-inline-item"><a href="https://www.pinterest.fr/" target="_blank" title="pinterest"><i class="fab fa-2x fa-youtube"></i></a></li>
-                     <li class="list-inline-item"><a href="https://vimeo.com/fr" target="_blank" title="vimeo"><i class="fab fa-2x fa-google"></i></a></li>
-                 </ul>
-             </div>
-             <div class="container text-center">
-             <p class="text-muted ">copyright@2021</p>
-         </div>
-         </div>
-          
-     </div>
-    
+           <!-- Footer -->
+<footer class="page-footer font-small unique-color-light pt-4 bgfooter">
+
+  <!-- Footer Elements -->
+  <div class="container">
+
+    <!-- Call to action -->
+    <ul class="list-unstyled list-inline text-center py-2">
+      <li class="list-inline-item">
+        <h5 class="mb-1">Inscris toi gratuitement!!!</h5>
+      </li>
+      <li class="list-inline-item">
+        <a href="{{path ("app_register")}}" class="btn btn-outline-white btn-rounded">Sign up!</a>
+      </li>
+    </ul>
+    <!-- Call to action -->
+
+  </div>
  
+
+  <!-- Copyright -->
+  <div>
+  <span class="footer-copyright text-center py-3text-muted color-light">
+  CopyRight &copy; 2022
+  </span>
+  </div>
+  <!-- Copyright -->
+
 </footer>
+       
+ 

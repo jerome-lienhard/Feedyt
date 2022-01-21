@@ -7,7 +7,7 @@
 /*-- HOME--*/
 body {
     
-    height: 200vh;
+    height: 175vh;
     font-family: roboto, sans-serif;
     
   }
@@ -21,7 +21,7 @@ body {
 
 #logo {
     display: block;
-    padding-top: 50px;
+    padding: 10px 0 10px 0;
     margin-left: auto;
     margin-right: auto;
     max-width: 300px;
@@ -35,12 +35,9 @@ body {
     
 }
 
-.entete {
-    color: rgb(73, 68, 68);
-}
 
 .presentation {
-    
+    text-align: center;
     margin-top: 50px;
     width: 100%;
     height: 50%;
@@ -61,6 +58,11 @@ body {
     padding: 5%;
     margin-bottom: 5%;
 }
+#centre{
+    height:20px;
+   
+
+}
 
 #connexion,
 #inscription {
@@ -75,7 +77,7 @@ body {
     border-left: 1px solid rgba(255, 255, 255, .3);
     border-top: 1px solid rgba(255, 255, 255, .3);
     padding: 1rem;
-    width: 200px;
+    width: 100px;
     border-radius: 2px;
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
@@ -122,7 +124,7 @@ body {
     
 }
 #café{
-    width: 60%;
+    width: 70%;
     height:auto; 
     border: 0.5px solid #7465DA;
     border-radius: 5px;

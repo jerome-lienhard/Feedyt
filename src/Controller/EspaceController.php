@@ -26,14 +26,14 @@ class EspaceController extends AbstractController
     {
         // Affichage des fulx des follows de l'utilisateur connecté
         $user = $this->getUser();
-        $actu = $user->getFollows();
+        //$actu = $user->getFollows();
         $news = new Flux;
         $Tabnews = Null;
 
-        foreach ($actu as $flu) {
+       /* foreach ($actu as $flu) {
             $affiche = $flu->getSite()->getSourceUrl();
             $Tabnews[] = $news->RSS_Display($affiche, 3);
-        }
+        }*/
 
         // Si il y a une recherche de flux
         if ($rq->query->get("url")) {

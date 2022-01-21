@@ -13,7 +13,7 @@
 <div class="container pageHome">
   <header>
     <div class="container-fluid" id="headerHome">
-      <div class="col-md-12">
+      <div class="col-md-12 bg-light">
         <img src="../image/logo_small.png" alt="logo-feedytech" id="logo">
       </div>
       
@@ -23,6 +23,7 @@
   </header>
   <main class="mainhome">
 
+
     <div class="container-fluid" id="titre"> 
 
         <p class="presentation">"Toutes les dernières infos de la tech en temps réel"</p>
@@ -30,21 +31,32 @@
 
     </div>
     
-        
+        <!--nouvel essai -->
    
-         <div id="but" class="container ">
+         <div id="but" class="w3-row">
 
-            <a href="{{ path("app_register")}}" class="favorite styled" id="inscription">Inscription</a>
 
-            <a href="{{ path("app_login")}}" class="favorite styled" id="connexion">Connexion</a>
-                    
+           <div class="w3-quarter w3-container w3-mobile">
+              <a href="{{ path("app_register")}}" class="favorite styled" id="inscription">Inscription</a>
+           </div>
+
+           <div class="w3-col" style="width:10%" id="centre">
+              
+           </div>
+         
+            <div class="w3-quarter w3-container w3-mobile">
+              <a href="{{ path("app_login")}}" class="favorite styled" id="connexion">Connexion</a>
+            </div> 
+
+          
+
         </div>
   
         <div id="articles" class="container ">
-         <div class="row">
+          <div class="row">
          
          
-          <div class="col-md-6 " id="p1">
+           <div class="col-md-6 " id="p1">
 
             <h2>Suivre les innovations</h2>
 
@@ -88,6 +100,7 @@
 </div> 
                     
       </div>
+      <hr>
 
           
     

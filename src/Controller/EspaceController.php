@@ -32,6 +32,7 @@ class EspaceController extends AbstractController
 
         foreach ($actu as $flu) {
             $affiche = $flu->getSite()->getSourceUrl();
+            $menu[] = $affiche;
             $Tabnews[] = $news->RSS_Display($affiche, 3);
         }
 
@@ -44,7 +45,7 @@ class EspaceController extends AbstractController
             }
 
             if ($flux != false) {
-                return $this->render('espace/index.html.twig', ["flux" => $flux, "url_ajout" => $request, "news" => $Tabnews]);
+                return $this->render('espace/index.html.twig', ["flux" => $flux, "url_ajout" => $request, "news" => $Tabnews, "menu" => $menu]);
             }
             // Sinon s'il y a une demande d'ajout à la liste des suivi de flux
         } elseif ($rq->query->get("ajout_url")) {
@@ -75,6 +76,9 @@ class EspaceController extends AbstractController
                     $entityManager->flush();
                 } else {
                     // Sinon ajout du site à la bdd + ajout du site dans la liste des follows de l'utilisateur
+                    // Ajout du site en bdd
+                    $entityManager->persist($site);
+                    $entityManager->flush();
                     $siteid = $siteRepository->findByUrl($request);
                     // $siteid = $siteid[0]->getId();
                     $follow = new Follow();
@@ -83,22 +87,19 @@ class EspaceController extends AbstractController
                     $follow->setSite($siteid[0]);
                     $entityManager->persist($follow);
                     $entityManager->flush();
-                    // Ajout du site en bdd
-                    $entityManager->persist($site);
-                    $entityManager->flush();
                 }
 
 
                 return $this->redirectToRoute('espace', ["site" => $siteid], Response::HTTP_SEE_OTHER);
             }
 
-            return $this->render('espace/index.html.twig', ["flux" => $flux, "url_ajout" => $request, "form" => $form->createView(), "news" => $Tabnews]);
+            return $this->render('espace/index.html.twig', ["flux" => $flux, "url_ajout" => $request, "form" => $form->createView(), "news" => $Tabnews, "menu" => $menu]);
         }
 
         $flux = NULL;
         $request = NULL;
         // sinon
-        return $this->render('espace/index.html.twig', ["flux" => $flux, "url_ajout" => $request, "news" => $Tabnews]);
+        return $this->render('espace/index.html.twig', ["flux" => $flux, "url_ajout" => $request, "news" => $Tabnews, "menu" => $menu]);
     }
 
     // Effacer la liste de flux
@@ -108,5 +109,17 @@ class EspaceController extends AbstractController
     {
 
         return $this->redirectToRoute("espace");
+    }
+    #[Route('/espace/follow{url}', name: 'espace_follow')]
+    public function lire_un_follow(): Response
+    {
+        $user = $this->getUser();
+        $actu = $user->getFollows();
+        foreach ($actu as $flu) {
+            $affiche = $flu->getSite()->getSourceUrl();
+            $menu[] = $affiche;
+        }
+
+        return $this->render('espace/follow.html.twig', ["menu" => $menu]);
     }
 }

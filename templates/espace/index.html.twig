@@ -17,38 +17,36 @@
 		{% endblock %}
 		
 	</head>
-  	<body>
+
 {% set url = ""%}
 {% block body %} 
 
-
+  	<body>
    		<div class="container">
  			<aside >
 	  			{% include "_menu_left.html.twig" %}
 			</aside>
-			<div class="text-center">
+
 			<h1>Tes dernières infos</h1>
-			<main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
-          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
-           
-		   {% if news is defined %}
+			{% if news is defined %}
 				{% for new in news %}
 					{{new|raw}}
 				{% endfor %}
 			{% endif %}
-			</div>
-			
+
+			<hr>
 			<h2>Ici découvre des nouveaux flux !</h2>
-           
-              <form method="GET" action="" class="d-flex form-control-sm">
+			
+
+			<form method="GET" action="" class="d-flex">
 			
 				<input type="text" class="form-control" name="url" placeholder="Tape l'url du site que tu souhaite suivre ici. Exemple : https://www.developpez.com/" value="{{url}}">
 			
-				<button type="submit" class="btn btn-outline-secondary">Rechercher</button>
+				<button type="submit" class="btn btn-outline-success">Rechercher</button>
+				
 				<a href=" {{path("espace_effacer_recherche")}} " class="btn btn-outline-danger">Effacer</a>
 
 			</form>
-			
 			{# Si l'utilisateur veut ajouter le flux à sa liste #}
 			{% if form is defined %}
 			<div class="form-control mt-3">
@@ -74,8 +72,7 @@
 				<p class="mt-3"> FeedyTech t'accompagne dans ta veille 😉</p>
 			{% endif %}
 			</div>
-			</div>
-		</div>
+		
 		</div>
 			{% endblock %}
 	</body>

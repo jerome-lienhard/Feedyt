@@ -29,7 +29,11 @@ class EspaceController extends AbstractController
         $actu = $user->getFollows();
         $news = new Flux;
         $Tabnews = Null;
+<<<<<<< HEAD
         $menu= Null;
+=======
+        $menu = null;
+>>>>>>> 7e76c24930fd514e3f38f7b46d6a4af81e9e9dec
 
        /* foreach ($actu as $flu) {
             $affiche = $flu->getSite()->getSourceUrl();
@@ -46,8 +50,16 @@ class EspaceController extends AbstractController
             }
 
             if ($flux != false) {
+<<<<<<< HEAD
                 if($menu ==null);
                 return $this->render('espace/index.html.twig', ["flux" => $flux, "url_ajout" => $request, "news" => $Tabnews]);
+=======
+               if($menu==null){
+                return $this->render('espace/index.html.twig', ["flux" => $flux, "url_ajout" => $request, "news" => $Tabnews, "menu" => $menu]);
+               }
+                return $this->render('espace/index.html.twig', ["flux" => $flux, "url_ajout" => $request, "news" => $Tabnews]);
+
+>>>>>>> 7e76c24930fd514e3f38f7b46d6a4af81e9e9dec
             }
             // Sinon s'il y a une demande d'ajout à la liste des suivi de flux
         } elseif ($rq->query->get("ajout_url")) {

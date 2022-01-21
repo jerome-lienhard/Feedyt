@@ -75,10 +75,7 @@ Encore
 //.enableIntegrityHashes(Encore.isProduction())
 
 // uncomment if you're having problems with a jQuery plugin
-.autoProvidejQuery() // require the JavaScript
-    // require('bootstrap-star-rating');
-    // // require 2 CSS files needed
-    // require('bootstrap-star-rating/css/star-rating.css');
-    // require('bootstrap-star-rating/themes/krajee-svg/theme.css');
+.autoProvidejQuery()// require the JavaScript
+
 
 module.exports = Encore.getWebpackConfig();

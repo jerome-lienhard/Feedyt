@@ -18,10 +18,25 @@
   </div>
   <a href=" {{path("app_logout")}} " class="style_hover">Déconnexion</a>
 </div> #}
-<div class="sidenav bg-light">
-  <div class="flex-shrink-0 p-3 bg-light" style="width: 280px;">
-    <a href="/" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
-      <svg class="bi me-2" width="30" height="24"><use xlink:href="#bootstrap"/></svg>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+        {% block stylesheets %}
+
+            {{ encore_entry_link_tags('espace') }} 
+           
+        {% endblock %}
+    
+     {% block javascripts %}
+            {{ encore_entry_script_tags('espace') }}
+      
+ <div class="sidenav bg-light">
+  
+    <a href="{{path ("home")}}" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
       <div class="photo-profil"><img src="./image/logo_small.png" alt="logo FeedyTech"></div>
     </a>
     <ul class="list-unstyled ps-0">
@@ -41,3 +56,13 @@
     </ul>
   </div>
 </div>
+            
+                
+           
+        </div>
+        {% endblock %}
+  </div>
+    </div>
+
+    </body>
+</html>

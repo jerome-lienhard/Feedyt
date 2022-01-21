@@ -18,11 +18,11 @@
 		
 	</head>
 
+  	<body>
+   		<div class="container">
 {% set url = ""%}
 {% block body %} 
 
-  	<body>
-   		<div class="container">
  			<aside >
 	  			{% include "_menu_left.html.twig" %}
 			</aside>
@@ -71,9 +71,10 @@
 			{% else %}
 				<p class="mt-3"> FeedyTech t'accompagne dans ta veille 😉</p>
 			{% endif %}
-			</div>
+			
 		
-		</div>
+		
 			{% endblock %}
+		</div>
 	</body>
 </html>

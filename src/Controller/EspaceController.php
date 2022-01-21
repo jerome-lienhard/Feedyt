@@ -31,11 +31,12 @@ class EspaceController extends AbstractController
         $Tabnews = Null;
         $menu= Null;
 
-       /* foreach ($actu as $flu) {
+
+        foreach ($actu as $flu) {
             $affiche = $flu->getSite()->getSourceUrl();
             $menu[] = $affiche;
             $Tabnews[] = $news->RSS_Display($affiche, 3);
-        }*/
+        }
 
         // Si il y a une recherche de flux
         if ($rq->query->get("url")) {
@@ -46,8 +47,10 @@ class EspaceController extends AbstractController
             }
 
             if ($flux != false) {
-                if($menu ==null);
-                return $this->render('espace/index.html.twig', ["flux" => $flux, "url_ajout" => $request, "news" => $Tabnews]);
+                if ($menu == null) {
+                    return $this->render('espace/index.html.twig', ["flux" => $flux, "url_ajout" => $request, "news" => $Tabnews]);
+                }
+                return $this->render('espace/index.html.twig', ["flux" => $flux, "url_ajout" => $request, "news" => $Tabnews, "menu" => $menu]);
             }
             // Sinon s'il y a une demande d'ajout à la liste des suivi de flux
         } elseif ($rq->query->get("ajout_url")) {
@@ -59,7 +62,7 @@ class EspaceController extends AbstractController
             $date = new DateTime();
             $site->setCreatesAt($date);
             $flux = new Flux;
-            $flux = $flux->RSS_Display($request, 15);
+            $flux = $flux->RSS_Display($request, 10);
 
             $form = $this->createForm(SiteType::class, $site);
             $form->handleRequest($rq);
@@ -100,7 +103,7 @@ class EspaceController extends AbstractController
 
         $flux = NULL;
         $request = NULL;
-        $menu = Null;
+
         // sinon
         return $this->render('espace/index.html.twig', ["flux" => $flux, "url_ajout" => $request, "news" => $Tabnews, "menu" => $menu]);
     }

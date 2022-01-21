@@ -1,4 +1,4 @@
-{% extends 'non_connecte.html.twig' %}
+{% extends 'base.html.twig' %}
 
 
 {% block title %}Hello HomeController!{% endblock %}
@@ -10,94 +10,107 @@
 		{% endblock %}
 
 {% block body %}
-<div class="container pageHome">
+<div class="container pageHome ">  
+
   <header>
     <div class="container-fluid" id="headerHome">
-      <div class="col-md-12">
-        <img src="../image/logo_small.png" alt="logo-feedytech" id="logo">
-      </div>
+        <div class="col-md-12 bg-light">
+
+             <img src="../image/logo_small.png" alt="logo-feedytech" id="logo">
+        
+        </div>
       
     </div>
 
     
   </header>
+
+
   <main class="mainhome">
+
 
     <div class="container-fluid" id="titre"> 
 
-        <p class="presentation">"Toutes les dernières infos de la tech en temps réel"</p>
+            <p class="presentation">"Toutes les dernières infos de la tech en temps réel"</p>
+        
 
     </div>
+     <!--nouvel essai -->
         
    
-         <div id="but" class="container ">
+    <div id="but" class="w3-row" id"but">
 
-            <a href="{{ path("app_register")}}" class="favorite styled" id="inscription">Inscription</a>
+          
+            <a class="btn " data-toggle="collapse" href="{{ path("app_register")}}" role="button" aria-expanded="false" aria-controls="collapseExample" id="styled">Inscription</a>
+            
+            <a class="btn " type="button" data-toggle="collapse" data-target="{{ path("app_login")}}" aria-expanded="false" aria-controls="collapseExample" id="styled">Connexion</a>
 
-            <a href="{{ path("app_login")}}" class="favorite styled" id="connexion">Connexion</a>
-                    
-        </div>
+    </div>
   
         <div id="articles" class="container ">
+           <div class="row">
          
-          <div class="col-sm-6" id="p1">
+         
+             <div class="col-md-6 " id="p1">
 
-            <h2>Suivre les innovations</h2>
+                <h2>Suivre les innovations</h2>
 
-            <div class="container" id="paragraphe">
+              <div class="container" id="paragraphe">
             
-              <div class="montage">
+                <div class="montage">
 
-                 <img src="../image/carousselHome2.jpg" alt="café au bureau" id="café">
+                    <img src="../image/carousselHome2.jpg" alt="café au bureau" id="café">
 
-              </div>
+                </div>
 
                  <p>Le monde de la tech dans son intégralité, est en phase de développement permanent. Il est donc nécessaire de suivre au plus prêt les récentes innovations du milieux. qu'il s'agisse de nouvelles syntaxes, de nouvelles  méthodes, de meilleurs principes de fonctionnement, d'arrivée de nouveaux languages.il faut aussi s'informer des evolutions du matèriel car ce sont nos supports et il faut s'avoir s'adapter et en tirer  le meilleur parti afin d'améliorer nos performances.
                  C'est dans ce but que nous vous invitons à suivre en permanence l'évolution des metiers de la tech. Vous pourrez ici lire et voir en direct, les toutes dernières informations provenant des sites les plus réputés du milieu et cela d'un simple <a href="{{ path("app_register")}}">click!</a>
                   </p>
+
+              </div>
+
             </div>
 
-          </div>
 
 
-
-          <div class="col-sm-6" id="p2">
+          <div class=" col-md-6 " id="p2">
 
             <h2>Listez vos favoris</h2> 
 
-           <div class="container" id="paragraphe">
+            <div class="container" id="paragraphe">
 
               <div class="montage">
 
-                 <img src="../image/carousselHome6.jpg" alt="café au bureau" id="café">
+                  <img src="../image/carousselHome6.jpg" alt="café au bureau" id="café">
                  
               </div>
 
-               <p>Comme nous l'avons indiqué précédemment, nous proposons sur notre site, un panel des sites les plus en vogues et réputés de la toile. Cependant nous disposons également de très nombreux autres sites spécialisés, parfois plus pointus ou parfois plus avant-gardistes.Il est donc possible sur notre site de créer sa propre liste de sites, afin d'y accéder pllus rapidement,ou de survoler les derniers articles de ceux-ci. Cette liste peut bien sur être changée en son intégeralité, ou etre mise à jour en fonction des besoinss du momment.Alors surfons ensemble,  maisq tout d'abord, allons visiter notre site.Plus que quelques <a href="{{ path("app_register")}}"> click!</a> </p>
+                  <p>Comme nous l'avons indiqué précédemment, nous proposons sur notre site, un panel des sites les plus en vogues et réputés de la toile. Cependant nous disposons également de très nombreux autres sites spécialisés, parfois plus pointus ou parfois plus avant-gardistes.Il est donc possible sur notre site de créer sa propre liste de sites, afin d'y accéder pllus rapidement,ou de survoler les derniers articles de ceux-ci. Cette liste peut bien sur être changée en son intégeralité, ou etre mise à jour en fonction des besoinss du momment.Alors surfons ensemble,  maisq tout d'abord, allons visiter notre site.Plus que quelques <a href="{{ path("app_register")}}"> click!</a> </p>
 
             </div>   
 
           </div>
-           
-                    
-        </div>
-          <div>
           
-          </div>
-    
-   
+        </div> 
+  
+    </div> 
+                    
+    </div>
+        <hr>
 
-         <div id="deroule" class="container">
+           <div id="deroule" class="container">
 
-            <div id="carousel"></div>
+           <div id="carousel"></div>
 
         
-         </div>
-    
-    </div>
+   </div>
+  
+
+
  
   </main>
 
   
 </div>
 {% endblock %}
+

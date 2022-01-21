@@ -98,6 +98,7 @@ class EspaceController extends AbstractController
 
         $flux = NULL;
         $request = NULL;
+        $menu = Null;
         // sinon
         return $this->render('espace/index.html.twig', ["flux" => $flux, "url_ajout" => $request, "news" => $Tabnews, "menu" => $menu]);
     }

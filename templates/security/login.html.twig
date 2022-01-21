@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Log in!
+{% block title %}connexion
 {% endblock %}
 
 {% block stylesheet %} {{ encore_entry_link_tags('register') }}
@@ -10,6 +10,7 @@
 {% endblock %}
 
 {% block body %}
+{% include "_message.html.twig" %}
 	<form method="post">
 		{% if error %}
 			<div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
@@ -50,7 +51,7 @@
 											</div>
 											<div class="form-check d-flex justify-content-center mb-5">
 												<div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4 p-2">
-													<button type="submit" class="btn btn btn-lg" style="padding-left: 2.5rem; padding-right: 2.5rem;">Connexion</button>
+													<button type="submit" class="btn btn btn-lg" style="padding-left: 2.5rem; padding-right: 2.5rem">Connexion</button>
 												</div>
 												<p class="small fw-bold">Pas encore inscrit?
 													<a href="{{path ("app_register")}}" class="link-primary text-decoration-non">Inscription</a>
@@ -70,6 +71,7 @@
 				</div>
 
 			</header>
-
+			</div>
+			</div>
 
 		{% endblock %}

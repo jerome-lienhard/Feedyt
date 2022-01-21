@@ -32,10 +32,11 @@
         </button>
         <div class="collapse show" id="home-collapse">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-      
+      {% if menu is defined %}
             {% for lien in menu %}
               <li><a href="espace/follow.html.twig?{{lien}}" class="link-dark rounded">{{lien}}</a></li>
             {% endfor %}
+      {% endif %}
 
           </ul>
         </div>

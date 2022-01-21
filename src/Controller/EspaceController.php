@@ -26,9 +26,10 @@ class EspaceController extends AbstractController
     {
         // Affichage des fulx des follows de l'utilisateur connecté
         $user = $this->getUser();
-        //$actu = $user->getFollows();
+        $actu = $user->getFollows();
         $news = new Flux;
         $Tabnews = Null;
+        $menu= Null;
 
        /* foreach ($actu as $flu) {
             $affiche = $flu->getSite()->getSourceUrl();
@@ -45,7 +46,8 @@ class EspaceController extends AbstractController
             }
 
             if ($flux != false) {
-                return $this->render('espace/index.html.twig', ["flux" => $flux, "url_ajout" => $request, "news" => $Tabnews, "menu" => $menu]);
+                if($menu ==null);
+                return $this->render('espace/index.html.twig', ["flux" => $flux, "url_ajout" => $request, "news" => $Tabnews]);
             }
             // Sinon s'il y a une demande d'ajout à la liste des suivi de flux
         } elseif ($rq->query->get("ajout_url")) {

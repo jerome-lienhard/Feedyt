@@ -1,144 +1,77 @@
-<!DOCTYPE>
-<html>
-	<head>
-		<meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>
-			{% block title %}inscription
-			{% endblock %}
-		</title>
-		<link
-		rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
-		{# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
 
-		{% block stylesheet %} {{ encore_entry_link_tags('register') }}
-     
-		{% endblock %}
+{% extends 'base.html.twig' %}
+			
+{% block stylesheet %} {{ encore_entry_link_tags('register') }}
+{% endblock %}
+{% block javascripts %} {{ encore_entry_script_tags('register') }}
+{% endblock %}
+		
 
-		{% block javascripts %} {{ encore_entry_script_tags('register') }}
-		{% endblock %}
-    
+{% block body %}
+<div class="container">
+	<header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
 
-		{% block body %}
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container">
-        <a class="navbar-brand"  href="{{path ("home")}}">
-    <img src="../image/logo_small.png" class="logo-nav" alt="logo de feedytech" id="logo"></a>
-    </a>
-        <button class="navbar-toggler btn" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>    
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-          <ul class="navbar-nav ms-auto mb-2 mb-lg-0" id="liens">
-         
-                            <li class="nav-item mr-1">
-                                <a href="{{path ("home")}}"class="btn px-3 me-2 nav-link">Accueil</a>
-                            </li>
-                            <li class="nav-item mr-1">
-                                <a href="{{path ("app_login")}}" class="btn me-2 nav-link">Connexion</a>
-                            </li>
-                            <li class="nav-item mr-1">
-                                <a href="{{path ("app_logout")}}"class="btn me-2 nav-link">Deconnexion</a>
-                            </li>
-                        </ul>
 
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item"href="{{path ("home")}}">Accueil</a></li>
-                <li><a class="dropdown-item" href="{{path ("app_login")}}">Connexion</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item"href="{{path ("app_logout")}}">Deconnexion</a></li>
-              </ul>
-            </li>
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
-    </nav>
-    
-      </div>
-    </div> <!-- /container -->
+		<div class="row d-flex justify-content-center align-items-center">
+			<div class="col-lg-12 col-xl-11">
+				<div class="card text-black" style="border-radius: 25px;">
+					<div class="card-body md-5">
+						<div class="row justify-content-center">
+							<div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
 
-  <div class="container">
-    <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
-      
+								<p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Inscription</p>
 
-	
- 
-    <div class="row d-flex justify-content-center align-items-center">
-      <div class="col-lg-12 col-xl-11">
-        <div class="card text-black" style="border-radius: 25px;">
-          <div class="card-body md-5">
-            <div class="row justify-content-center">
-              <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
-
-                <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Inscription</p>
-
-                <div class="mx-1 mx-md-4">
-{{ form_start(registrationForm) }}
-                  <div class="d-flex flex-row align-items-center mb-4">
-                    <i class="fas fa-user fa-lg me-3 fa-fw"></i>
-                    <div class="form-outline flex-fill mb-0">
-					{{ form_errors( registrationForm.username, )}} {{ form_widget(registrationForm.username, {
+								<div class="mx-1 mx-md-4"> {{ form_start(registrationForm) }}
+									<div class="d-flex flex-row align-items-center mb-4">
+										<i class="fas fa-user fa-lg me-3 fa-fw"></i>
+										<div class="form-outline flex-fill mb-0"> {{ form_errors( registrationForm.username, )}} {{ form_widget(registrationForm.username, {
                     attr: { placeholder: "Pseudo" }
                 } )}}
-                      
-                      
-                    </div>
-                  </div>
 
-                  <div class="d-flex flex-row align-items-center mb-4">
-                    <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
-                    <div class="form-outline flex-fill mb-0">
-                 
-					  {{ form_errors( registrationForm.email, )}} {{ form_widget(registrationForm.email, {
+
+										</div>
+									</div>
+
+									<div class="d-flex flex-row align-items-center mb-4">
+										<i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+										<div class="form-outline flex-fill mb-0"> {{ form_errors( registrationForm.email, )}} {{ form_widget(registrationForm.email, {
                     attr: { placeholder: "Email" }
    } )}}
-                    </div>
-                  </div>
+										</div>
+									</div>
 
-                  <div class="d-flex flex-row align-items-center mb-4">
-                    <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
-                    <div class="form-outline flex-fill mb-0">
-                      {{ form_errors(registrationForm.plainPassword, {
+									<div class="d-flex flex-row align-items-center mb-4">
+										<i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+										<div class="form-outline flex-fill mb-0"> {{ form_errors(registrationForm.plainPassword, {
         }) }} {{ form_widget(registrationForm.plainPassword, {
                     attr: { placeholder: "Mot de Passe" }
                 } )}}
-                    </div>
-                  </div>
+										</div>
+									</div>
 
 
-                  <div class="form-check d-flex justify-content-center mb-5">
-                   
-                    {{ form_row(registrationForm.agreeTerms) }}
-                  </div>
-                
-
-                  <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4 p-2">
-                    <button type="submit" class="btn btn-primary btn-lg">Confirmer</button>
-                  </div>{{ form_end(registrationForm) }}
-                  </div>
-
-                
-
-              </div>
-              <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
-
-                <img src="https://static.vecteezy.com/ti/vecteur-libre/p1/4244697-illustration-de-la-technologie-d-intelligence-artificielle-analyse-des-programmes-en-affichant-des-donnees-statistiques-de-apps-vector-design-for-landing-page-web-website-mobile-apps-poster-flyer-ui-ux" class="img-fluid"
-          alt="Sample image">
-
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  
+									<div class="form-check d-flex justify-content-center mb-5"> {{ form_row(registrationForm.agreeTerms) }}
+									</div>
 
 
-				</header>
-        </div>
+									<div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4 p-2">
+										<button type="submit" class="btn btn-primary btn-lg">Confirmer</button>
+									</div> {{ form_end(registrationForm) }}
+								</div>
 
-{% endblock %}
 
-<div>
-{% include "_footer.html.twig" %}</div>
-</body></html>
+							</div>
+							<div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
+
+								<img src="https://static.vecteezy.com/ti/vecteur-libre/p1/4244697-illustration-de-la-technologie-d-intelligence-artificielle-analyse-des-programmes-en-affichant-des-donnees-statistiques-de-apps-vector-design-for-landing-page-web-website-mobile-apps-poster-flyer-ui-ux" class="img-fluid" alt="Sample image">
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+	
+	{% endblock %}

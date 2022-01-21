@@ -12,24 +12,22 @@
             {{ encore_entry_link_tags('register') }}
 		 
         {% endblock %}
-
-    
+   
     </head>
-    <body>
-        <div class="right-aside">
-			{% include "_menu.html.twig" %}
-        </div>
-
+    <body>  
+		{% include "_non_connecte.html.twig" %}
        
         
         {% block body %}
+        {% include "register.html.twig" %}
+        {% include "login.html.twig" %}
 
             {% block javascripts %}
             {{ encore_entry_script_tags('app') }}
             {% endblock %}
         {% endblock %}
         
-        
+         
        {% include "_footer.html.twig" %}
     </body>
 </html>

@@ -1,0 +1,51 @@
+{% block stylesheets %} {{ encore_entry_link_tags('app') }}
+{% endblock %}
+{% block javascripts %}{{ encore_entry_script_tags('app') }}
+{% endblock %}
+
+
+
+	<!-- Fixed navbar -->
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<div class="container">
+			<a class="navbar-brand" href="{{path ("home")}}">
+				<img src="../image/logo_small.png" class="w-25 h-3 m-auto logo-nav" alt="logo de feedytech" id="logo"></a>
+		</a>
+		<button class="navbar-toggler btn" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarCollapse">
+			<ul class="navbar-nav ms-auto mb-2 mb-lg-0" id="liens">
+			
+				<li class="nav-item mr-1">
+					<a href="{{path ("home")}}" class="btn px-3 me-2 nav-link">Accueil</a>
+				</li>
+				<li class="nav-item mr-1">
+					<a href="{{path ("app_login")}}" class="btn me-2 nav-link">Connexion</a>
+				</li>
+				<li class="nav-item mr-1">
+					<a href="{{path ("app_login")}}" class="btn me-2 nav-link">Deconnexion</a>
+				</li>
+			</ul>
+
+			<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+				<li>
+					<a class="dropdown-item" href="{{path ("home")}}">Accueil</a>
+				</li>
+				<li>
+					<a class="dropdown-item" href="{{path ("app_login")}}">Connexion</a>
+				</li>
+				<li>
+					<a class="dropdown-item" href="{{path ("app_login")}}">Deconnexion</a>
+				</li>
+				<li><hr class="dropdown-divider"></li>
+			</ul>
+		</li>
+	</ul>
+</div>
+<!--/.nav-collapse -->
+</div>
+</nav>
+</div>
+<!-- /container -->
+

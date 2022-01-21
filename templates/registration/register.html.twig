@@ -12,6 +12,7 @@
 		{# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
 
 		{% block stylesheet %} {{ encore_entry_link_tags('register') }}
+     
 		{% endblock %}
 
 		{% block javascripts %} {{ encore_entry_script_tags('register') }}
@@ -60,9 +61,9 @@
     <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
       
 
-	<section class="vh-100" >
-  <div class="container h-100">
-    <div class="row d-flex justify-content-center align-items-center h-100">
+	
+ 
+    <div class="row d-flex justify-content-center align-items-center">
       <div class="col-lg-12 col-xl-11">
         <div class="card text-black" style="border-radius: 25px;">
           <div class="card-body md-5">
@@ -130,11 +131,14 @@
         </div>
       </div>
     </div>
-  </div>
-</section>
+  
 
-					
+
+				</header>
+        </div>
+
 {% endblock %}
-</div>
-{% include "_footer.html.twig" %}
+
+<div>
+{% include "_footer.html.twig" %}</div>
 </body></html>

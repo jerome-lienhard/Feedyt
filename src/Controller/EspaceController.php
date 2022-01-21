@@ -3,16 +3,12 @@
 namespace App\Controller;
 
 use App\Entity\Follow;
-use App\Entity\Membre;
 use App\Entity\Site;
 use App\Form\SiteType;
 use App\Functions\Flux;
-use App\Repository\FollowRepository;
-use App\Repository\MembreRepository;
 use App\Repository\SiteRepository;
 use DateTime;
 use Doctrine\ORM\EntityManagerInterface;
-use phpDocumentor\Reflection\Types\Null_;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -29,12 +25,17 @@ class EspaceController extends AbstractController
         $actu = $user->getFollows();
         $news = new Flux;
         $Tabnews = Null;
-        $menu= Null;
+        $menu = null;
+        $lien_menu = null;
+        if ($siteRepository->findAll()) {
+            $siteurl = $siteRepository->findAll();
+        }
 
 
         foreach ($actu as $flu) {
             $affiche = $flu->getSite()->getSourceUrl();
             $menu[] = $affiche;
+            $lien_menu[] = substr(substr(strstr($affiche, '.'), 1), 0, -1);;
             $Tabnews[] = $news->RSS_Display($affiche, 3);
         }
 
@@ -50,7 +51,7 @@ class EspaceController extends AbstractController
                 if ($menu == null) {
                     return $this->render('espace/index.html.twig', ["flux" => $flux, "url_ajout" => $request, "news" => $Tabnews]);
                 }
-                return $this->render('espace/index.html.twig', ["flux" => $flux, "url_ajout" => $request, "news" => $Tabnews, "menu" => $menu]);
+                return $this->render('espace/index.html.twig', ["flux" => $flux, "url_ajout" => $request, "news" => $Tabnews, "menu" => $menu, "lien_menu" => $lien_menu, "site" => $siteurl]);
             }
             // Sinon s'il y a une demande d'ajout à la liste des suivi de flux
         } elseif ($rq->query->get("ajout_url")) {
@@ -98,14 +99,15 @@ class EspaceController extends AbstractController
                 return $this->redirectToRoute('espace', ["site" => $siteid], Response::HTTP_SEE_OTHER);
             }
 
-            return $this->render('espace/index.html.twig', ["flux" => $flux, "url_ajout" => $request, "form" => $form->createView(), "news" => $Tabnews, "menu" => $menu]);
+            return $this->render('espace/index.html.twig', ["flux" => $flux, "url_ajout" => $request, "form" => $form->createView(), "news" => $Tabnews, "menu" => $menu, "lien_menu" => $lien_menu]);
         }
 
         $flux = NULL;
         $request = NULL;
 
+
         // sinon
-        return $this->render('espace/index.html.twig', ["flux" => $flux, "url_ajout" => $request, "news" => $Tabnews, "menu" => $menu]);
+        return $this->render('espace/index.html.twig', ["flux" => $flux, "url_ajout" => $request, "news" => $Tabnews, "menu" => $menu, "lien_menu" => $lien_menu, "site" => $siteurl]);
     }
 
     // Effacer la liste de flux
@@ -116,16 +118,28 @@ class EspaceController extends AbstractController
 
         return $this->redirectToRoute("espace");
     }
-    #[Route('/espace/follow{url}', name: 'espace_follow')]
-    public function lire_un_follow(): Response
+    #[Route('/espace/follow/{id}', name: 'espace_follow')]
+    public function lire_un_follow(Site $site, SiteRepository $siteRepository): Response
     {
+        $chemin = "../.";
         $user = $this->getUser();
         $actu = $user->getFollows();
         foreach ($actu as $flu) {
             $affiche = $flu->getSite()->getSourceUrl();
-            $menu[] = $affiche;
+            $lien_menu[] =  substr(substr(strstr($affiche, '.'), 1), 0, -1);;
+        }
+        $flux = null;
+        if ($site->getSourceUrl()) {
+            $site_source = $site->getSourceUrl();
+            $flux = new Flux;
+            $flux = $flux->RSS_Display($site_source, 10);
         }
 
-        return $this->render('espace/follow.html.twig', ["menu" => $menu]);
+
+        if ($siteRepository->findAll()) {
+            $siteurl = $siteRepository->findAll();
+        }
+
+        return $this->render('espace/follow.html.twig', ["lien_menu" => $lien_menu, "chemin" => $chemin, "flux" => $flux, "site" => $siteurl, "source" => $site_source]);
     }
 }

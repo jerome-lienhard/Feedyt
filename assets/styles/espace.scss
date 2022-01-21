@@ -14,6 +14,7 @@ img {
     border-radius: 5px;
 }
 
+// Boutons
 .styled {
     background-color: #7465DA;
     border: none;
@@ -42,6 +43,7 @@ img {
     box-shadow: inset -2px -2px 3px rgba(255, 255, 255, .6), inset 2px 2px 3px rgba(0, 0, 0, .6);
 }
 
+// Bootstrap
 .bd-placeholder-img {
     font-size: 1.125rem;
     text-anchor: middle;
@@ -58,39 +60,7 @@ img {
 
 // Menu left
 
-/* html{ */
-
-
-/* height: 100%; */
-
-
-/* background-color: lightsteelblue; */
-
-
-/* } */
-
-// aside {
-//     position: fixed;
-//     width: 200px;
-//     top: 0;
-//     left: 0;
-//     bottom: 0;
-//     overflow-x: hidden;
-//     z-index: 1;
-//     background-color: rgb(243, 243, 243);
-// }
-
 /* Fixed sidenav, full height */
-
-.sidenav {
-    height: 100%;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    // background-color: rgb(243, 243, 243);
-    padding-top: 20px;
-}
 
 .photo-profil {
     display: flex;
@@ -102,81 +72,85 @@ img {
     width: 50%;
 }
 
+.sidenav {
+    height: 100%;
+    width: 280px;
+    position: fixed;
+    z-index: 1001;
+    top: 0;
+    left: 0;
+    // background-color: #f8f9fa;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
 
 
+/* Style the sidenav links and the dropdown button */
+
+.style_hover,
+.dropdown-btn {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 20px;
+    color: rgba(0, 0, 0, 0.685);
+    display: block;
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    outline: none;
+}
 
 
+/* On mouse-over */
 
-// .no_hover {
-//     background-color: rgb(243, 243, 243);
-// }
-// /* Style the sidenav links and the dropdown button */
-// .sidenav a,
-// .dropdown-btn {
-//     padding: 6px 8px 6px 16px;
-//     text-decoration: none;
-//     font-size: 1.2em;
-//     color: #818181;
-//     display: block;
-//     border: none;
-//     background: none;
-//     width: 100%;
-//     text-align: left;
-//     cursor: pointer;
-//     outline: none;
-// }
-// /* On mouse-over */
-// .sidenav .style_hover:hover,
-// .dropdown-btn:hover {
-//     color: white;
-//     background-color: #7565da36;
-// }
-// /* Main content */
-// .main {
-//     margin-left: 200px;
-//     /* Same as the width of the sidenav */
-//     font-size: 20px;
-//     /* Increased text to enable scrolling */
-//     padding: 0px 10px;
-// }
-// /* Add an active class to the active dropdown button */
-// .active {
-//     background-color: #7465DA;
-//     color: white;
-// }
-// /* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
-// .dropdown-container {
-//     display: none;
-//     background-color: rgb(223, 223, 223);
-//     padding-left: 8px;
-// }
-// /* Optional: Style the caret down icon */
-// .fa-caret-down {
-//     float: right;
-//     padding-right: 8px;
-// }
-// Burger menu
-// .containermenu {
-//     display: inline-block;
-//     cursor: pointer;
-// }
-// .bar1,
-// .bar2,
-// .bar3 {
-//     width: 35px;
-//     height: 5px;
-//     background-color: #333;
-//     margin: 6px 0;
-//     transition: 0.4s;
-// }
-// .change .bar1 {
-//     -webkit-transform: rotate(-45deg) translate(-9px, 6px);
-//     transform: rotate(-45deg) translate(-9px, 6px);
-// }
-// .change .bar2 {
-//     opacity: 0;
-// }
-// .change .bar3 {
-//     -webkit-transform: rotate(45deg) translate(-8px, -8px);
-//     transform: rotate(45deg) translate(-8px, -8px);
-// }
+.style_hover:hover,
+.dropdown-btn:hover {
+    color: #ffffff;
+    background-color: #7565da55;
+}
+
+
+/* Add an active class to the active dropdown button */
+
+.active {
+    background-color: #7465DA;
+    color: white;
+}
+
+
+/* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+
+.dropdown-container {
+    display: none;
+    background-color: #f8f9fa;
+    padding-left: 8px;
+}
+
+
+/* Optional: Style the caret down icon */
+
+.fa-caret-down {
+    float: right;
+    padding-right: 8px;
+}
+
+// Follow page
+.titre_follow {
+    margin-top: 100px;
+}
+
+// Menu-top
+.menu_top {
+    margin-left: 280px;
+}
+
+.deco_menu:active {
+    border-bottom: 3px solid #7465DA;
+}
+
+.deco_menu:hover {
+    border-bottom: 3px solid #7465DA;
+    transition: 0.3s;
+}

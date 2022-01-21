@@ -7,10 +7,11 @@
 /*-- HOME--*/
 body {
     
-    height: 200vh;
+    height: 100vh;
     font-family: roboto, sans-serif;
     
   }
+  
 
 #headerHome {
     height: 100%;
@@ -20,7 +21,7 @@ body {
 
 #logo {
     display: block;
-    padding-top: 50px;
+    padding: 10px 0 10px 0;
     margin-left: auto;
     margin-right: auto;
     max-width: 300px;
@@ -34,12 +35,9 @@ body {
     
 }
 
-.entete {
-    color: rgb(73, 68, 68);
-}
 
 .presentation {
-    
+    text-align: center;
     margin-top: 50px;
     width: 100%;
     height: 50%;
@@ -49,16 +47,20 @@ body {
 }
 
 
-
-
 #but {
-    align-items: center;
-    justify-content: center;
+    
    
     height: 0;
     width: auto;
     padding: 5%;
     margin-bottom: 5%;
+}
+
+
+#centre{
+    height:20px;
+   
+
 }
 
 #connexion,
@@ -68,14 +70,15 @@ body {
 }
 
 
-.styled {
+
+#styled {
     background-color:#7465DA;
     border: none;
     border-left: 1px solid rgba(255, 255, 255, .3);
     border-top: 1px solid rgba(255, 255, 255, .3);
     padding: 1rem;
-    width: 200px;
-    border-radius: 2px;
+    width: 120px;
+    border-radius: 5px;
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     -moz-backdrop-filter: blur(5px);
@@ -84,24 +87,29 @@ body {
     font-weight: 500;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, .2);
     transition: all .3s;
-    margin-bottom: 2em;
+    
+ 
+    
     text-decoration: none;
     
 
     
 }
 
-.styled:hover {
+#styled:hover {
     background-color: rgb(170, 162, 148);
     color:white;
    
 
 }
 
-.styled:active {
+#styled:active {
     box-shadow: inset -2px -2px 3px rgba(255, 255, 255, .6), inset 2px 2px 3px rgba(0, 0, 0, .6);
 }
 
+h2{
+    margin-top: 10px;
+}
 #articles{
     display: flex;
     padding: 0%;
@@ -121,7 +129,7 @@ body {
     
 }
 #café{
-    width: 60%;
+    width: 70%;
     height:auto; 
     border: 0.5px solid #7465DA;
     border-radius: 5px;

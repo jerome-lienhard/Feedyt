@@ -19,15 +19,18 @@
 	</head>
 
   	<body>
-   		<div class="container">
-{% set url = ""%}
-{% block body %} 
-
- 			<aside >
+   		<div class="container ">
+		    <aside>
 	  			{% include "_menu_left.html.twig" %}
 			</aside>
+			<div class="menu">
+			{% include "_nav_espace.html.twig" %}
+			</div>
 
-			<h1>Tes dernières infos</h1>
+			{% set url = ""%}
+			{% block body %} 
+
+			<h1 class="titre_follow">Tes dernières infos</h1>
 			{% if news is defined %}
 				{% for new in news %}
 					{{new|raw}}
@@ -35,10 +38,10 @@
 			{% endif %}
 
 			<hr>
-			<h2>Ici découvre des nouveaux flux !</h2>
+			<h2 id="ajouter">Ici découvre des nouveaux flux !</h2>
 			
 
-			<form method="GET" action="" class="d-flex">
+			<form method="GET" action="/espace/#ajouter" class="d-flex">
 			
 				<input type="text" class="form-control" name="url" placeholder="Tape l'url du site que tu souhaite suivre ici. Exemple : https://www.developpez.com/" value="{{url}}">
 			
@@ -49,11 +52,11 @@
 			</form>
 			{# Si l'utilisateur veut ajouter le flux à sa liste #}
 			{% if form is defined %}
-			<div class="form-control mt-3">
+			<div class="alert alert-success form-control mt-3">
 			<h3>Ajouter un flux à ma liste</h3>
 				{{ form_start(form) }}
 				{{ form_widget(form) }}
-				<button class="btn styled w-25 mt-3">{{ button_label|default('Save') }}</button>
+				<button class="btn styled w-25 mt-3">{{ button_label|default('Est-ce bien ce lien que tu veux ajouter ?') }}</button>
 				{{ form_end(form) }}
 			</div>
 				{{flux|raw}}
@@ -63,9 +66,9 @@
 			{# Si l'utilisateur affiche le flux le bouton ajouter apparait #}
 			<div>
 			{% if flux %}
-				<form method="GET" action="">
+				<form method="GET" action="/espace/#ajouter">
 					<input type="hidden" name="ajout_url" value="{{(url_ajout ?? url)}}">
-					<button type="submit" class="btn btn-outline-primary">Ajouter à ma liste</button> 
+					<button type="submit" class="btn btn-outline-success w-100">Ajouter ce flux à ma liste</button> 
 				</form>
 				{{flux|raw}}
 			{% else %}

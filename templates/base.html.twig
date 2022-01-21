@@ -16,19 +16,23 @@
     </head>
     <body>  
 		{% include "_non_connecte.html.twig" %}
+         <div class="container mb-5">
+        {{include("_message.html.twig")}}
        
         
         {% block body %}
         {% include "register.html.twig" %}
         {% include "login.html.twig" %}
-
+        
             {% block javascripts %}
             {{ encore_entry_script_tags('app') }}
             {% endblock %}
+            
         {% endblock %}
-        
-         
-       {% include "_footer.html.twig" %}
+        <div>
+        {% include "_footer.html.twig" %}
+         </div>
+       
     </body>
 </html>
 

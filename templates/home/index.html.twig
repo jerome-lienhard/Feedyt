@@ -9,21 +9,23 @@
 
   <main class="mainhome"><!--contient l'ensemble des sections titres photos paragraphe et carousel -->
 
-    <div class="container" id="titre"> 
+    <div class="container" id="titre"> <!--titre de la page-->
       <p class="presentation">"Toutes les dernières infos de la tech en temps réel"</p>
     </div>
-    
+
        <section id="but" class="w3-row" >
 
-         <a class="btn btn-lg" data-toggle="collapse" href="{{ path("app_register")}}" role="button" aria-expanded="false" aria-controls="collapseExample" id="styled">Inscription</a>  
+            <!--lien vers inscription-->
+           <a class="btn btn-lg" data-toggle="collapse" href="{{ path("app_register")}}" role="button" aria-expanded="false" aria-controls="collapseExample" id="styled">Inscription</a>  
 
-         <a class="btn btn-lg" type="button" data-toggle="collapse" href="{{ path("app_login")}}" aria-expanded="false" aria-controls="collapseExample" id="styled">Deja membre</a>
+              <!--lien vers connexion-->
+           <a class="btn btn-lg" type="button" data-toggle="collapse" href="{{ path("app_login")}}" aria-expanded="false" aria-controls="collapseExample" id="styled">Deja membre</a>
 
        </section>
     
-      <div class="row mt-5">
+      <div class="row ">
 
-        <div class="col-md-12 mt-5" id="p1">
+        
               <!--titre paragraphes--> 
               <a id="a">Suivre les innovations ! Listez vos favoris.</a>
             
@@ -55,9 +57,9 @@
               
             
           
-        </div>            
+                  
       </div>
-      <hr>
+                                                           <hr>
          <!-- Carousel-->
          <div id="deroule" class="container">
          <div id="carousel"></div>

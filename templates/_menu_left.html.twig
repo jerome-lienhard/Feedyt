@@ -1,0 +1,26 @@
+
+
+<div id="mySidepanel " class="sidepanel bg-light">
+  <button  id="btn-nav" class="btn btn-outline-secondary" ><i class="fas fa-times"></i></button>
+    <a href="{{path ("home")}}"><div class="photo-profil"><img src="{{ chemin ?? '' }}./image/logo_small.png" alt="logo FeedyTech"></div></a>
+    <button class="dropdown-btn">Mes flux
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-container">
+      {% if lien_menu is defined %}
+        {% set i = 1 %}
+          {% for siteid in site %}
+            {% set j = 1 %}
+            {% for lmenu in lien_menu %}
+              {% if i == j %}
+                <a href="{{ path("espace_follow",{ id: siteid.id })}}" class="rounded style_hover">{{lmenu}}</a>
+              {% endif %}
+            {% set j = j + 1 %}
+            {% endfor %}
+            {% set i = i + 1 %}
+          {% endfor %}
+        {% endif %}
+    </div>
+    <a href=" {{path("app_logout")}} " class="rounded style_hover">Deconnexion</a>
+  
+</div>

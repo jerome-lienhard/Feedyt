@@ -1,0 +1,9 @@
+{% extends 'espace/index.html.twig' %}
+
+{% block title %}Mon espace | Mes flux{% endblock %}
+
+{% block body %}
+<h2 class="ms-3 titre_follow">Voici les derniers articles du site {{ source }}</h2>
+{{flux|raw}}
+
+{% endblock %}

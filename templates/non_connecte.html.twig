@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+     <title>{% block title %}FeedyTech!{% endblock %}</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <linkrel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+       
+
+
+    </div>
+        {% block stylesheets %}
+         
+            {{ encore_entry_link_tags('app') }}
+
+        {% endblock %}
+
+    </head>
+    <body>
+    <div class="container">
+        {% block body %}
+           <header>
+       <!-- Fixed navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+        <a class="navbar-brand"  href="{{path ("home")}}">
+    <img src="../image/logo_small.png" class="w-25 h-3 m-auto logo-nav" alt="logo de feedytech" id="logo"></a>
+    </a>
+        <button class="navbar-toggler btn" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>    
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 skiplinks" id="liens">
+         
+                            <li class="nav-item mr-1">
+                                <a href="{{path ("home")}}"class="btn px-3 me-2 nav-link">Accueil</a>
+                            </li>
+                            <li class="nav-item mr-1">
+                                <a href="{{path ("app_login")}}" class="btn me-2 nav-link">Connexion</a>
+                            </li>
+                            <li class="nav-item mr-1">
+                                <a href="{{path ("app_logout")}}"class="btn me-2 nav-link">Deconnexion</a>
+                            </li>
+                        </ul>
+
+              <ul class="dropdown-menu skiplinks" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item"href="{{path ("home")}}">Accueil</a></li>
+                <li><a class="dropdown-item" href="{{path ("app_login")}}">Connexion</a></li>
+                <li><hr class="dropdown-divider"></li>
+              </ul>
+            </li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+    
+      </div>
+    </div> <!-- /container -->
+
+      </header>
+
+            {% block javascripts %}
+                {{ encore_entry_script_tags('app') }} 
+
+            {% endblock %}
+            
+        {% endblock %}
+
+        
+        
+        </div>
+        {% include "_footer.html.twig" %}
+    </body>
+</html>

@@ -7,29 +7,36 @@
 /*-- HOME--*/
 
 body {
+
     height: 100vh;
     font-family: roboto, sans-serif;
-    /*  background-image: url(https://assets.kpmg/is/image/kpmg/two-athletes-on-racing-track-against-blue-background:cq5dam.web.1082.378);*/
     background-repeat: no-repeat;
     background-size: 1920px 1920px;
 }
 
 #headerHome {
+
     height: 100%;
     width: auto;
+
 }
 
 #feed {
+
     width: 300px;
+
 }
 
 .mainhome {
+
     margin-top: 50px;
     text-align: center;
     font-size: larger;
+
 }
 
 .presentation {
+
     text-align: center;
     margin-top: 50px;
     margin-bottom: 50px;
@@ -38,16 +45,19 @@ body {
     font-size: 50px;
     font-weight: 400;
     color: rgb(87, 84, 84)e;
+
 }
 
 
 
 
-#connexion,
+/*#connexion,
 #inscription {
+
     padding: 10px 50px 10px 50px;
     margin: 0 20px 20px 20px;
-}
+
+}*/
 
 #styled {
     background-color: #7465DA;
@@ -102,11 +112,10 @@ body {
 #café {
     width: 70%;
     height: auto;
-    /* border: 0.5px solid #7465DA;*/
+    
     border-radius: 5px;
     width: 50%;
-    /*border: 0.5px solid #7465DA;
-    border-radius: 5px;*/
+  
 }
 
 #p2 {

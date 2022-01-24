@@ -17,6 +17,7 @@ class SiteController extends AbstractController
     #[Route('/', name: 'site_index', methods: ['GET'])]
     public function index(SiteRepository $siteRepository): Response
     {
+        
         return $this->render('site/index.html.twig', [
             'sites' => $siteRepository->findAll(),
         ]);

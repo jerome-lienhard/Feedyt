@@ -15,7 +15,6 @@ class ContactType extends AbstractType
         $builder
             ->add('email', EmailType::class)
             ->add('message')
-            ->add('envoyer', SubmitType::class)
         ;
     }
 

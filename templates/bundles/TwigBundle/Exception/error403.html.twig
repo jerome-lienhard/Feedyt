@@ -1,0 +1,12 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+<h1 class="alert alert-danger">ERREUR 403: vous n'avez pas accès a cette page</h1>
+<a href="{{ path ("home") }}">
+<i class="fa fa-home"></i>Retour à la page d'accueil
+</a>
+{% endblock %}
+
+{ % block title %}
+Erreur 403
+{% endblock %}

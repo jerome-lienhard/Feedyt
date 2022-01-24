@@ -72,18 +72,16 @@ img {
     width: 50%;
 }
 
-.sidenav {
-    height: 100%;
-    width: 280px;
-    position: fixed;
-    z-index: 1001;
-    top: 0;
-    left: 0;
-    // background-color: #f8f9fa;
-    overflow-x: hidden;
-    padding-top: 20px;
-}
-
+// .sidenav {
+//     height: 100%;
+//     width: 280px;
+//     position: fixed;
+//     top: 0;
+//     left: 0;
+//     // background-color: #f8f9fa;
+//     overflow-x: hidden;
+//     padding-top: 20px;
+// }
 
 /* Style the sidenav links and the dropdown button */
 
@@ -142,7 +140,7 @@ img {
 }
 
 // Menu-top
-.menu_top {
+#menu_top {
     margin-left: 280px;
 }
 
@@ -153,4 +151,45 @@ img {
 .deco_menu:hover {
     border-bottom: 3px solid #7465DA;
     transition: 0.3s;
+}
+
+.sidepanel {
+    position: fixed;
+    z-index: 1;
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.5s;
+    height: 100%;
+    width: 280px;
+    top: 0;
+    left: 0;
+    padding-top: 20px;
+}
+
+.sidepanel .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+
+/* Style the button that is used to open the sidepanel */
+
+.openbtn {
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #111;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+}
+
+.openbtn:hover {
+    background-color: #444;
+}
+
+#btn-nav-open {
+    display: none;
 }

@@ -23,7 +23,7 @@ Encore
 .addEntry('app', './assets/app.js')
     .addEntry('register', './assets/register.js')
     .addEntry('espace', './assets/espace.js')
-    .addEntry('nav', './assets/nav.js')
+
 
 
 
@@ -75,7 +75,7 @@ Encore
 //.enableIntegrityHashes(Encore.isProduction())
 
 // uncomment if you're having problems with a jQuery plugin
-.autoProvidejQuery()// require the JavaScript
+.autoProvidejQuery() // require the JavaScript
 
 
 module.exports = Encore.getWebpackConfig();

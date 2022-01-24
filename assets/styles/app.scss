@@ -109,9 +109,11 @@ body {
 #a{
     font-weight: bold;
     margin-top: 10px;
+    margin-bottom: 20px;
+    padding: 40px;
     font-size: 40px;
-    border-radius: 5px;
-    box-shadow: 0px 1px 3px #777;
+    
+   
 }
 #articles{
     display: flex;
@@ -128,7 +130,8 @@ body {
 }
 
 .montage{
-    margin-bottom: 20px;
+    margin-bottom: 20px ;
+    margin-top: 20px;
     
 }
 #café{
@@ -140,18 +143,19 @@ body {
 }
 
 #p2{
-    margin-bottom: 100px;
+   
     padding: 20px;
      text-justify: distribute;
 }
-p{
-  
+#ps{
+  margin-top: 20px;
    padding-left: 10px;
    padding-right: 10px;
    text-align: justify;
 }
 #paragraphe{
     padding: 12px;
+    margin-top: 20px;
    
     
 }

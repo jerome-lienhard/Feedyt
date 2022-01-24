@@ -2,38 +2,34 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-     <title>{% block title %}FeedyTech!{% endblock %}</title>
+    <title>{% block title %}FeedyTech!{% endblock %}</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <linkrel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
-        
-        {% block stylesheets %}
-           
-            {{ encore_entry_link_tags('app') }} 
-            {{ encore_entry_link_tags('register') }}
-		 
-        {% endblock %}
-   
-    </head>
-    <body>  
-		{% include "_non_connecte.html.twig" %}
-         <div class="container mb-5">
-        {{include("_message.html.twig")}}
-       
-        
-        {% block body %}
-        {% include "register.html.twig" %}
-        {% include "login.html.twig" %}
-        
+    <linkrel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">    
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('app') }} 
+        {{ encore_entry_link_tags('register') }}
+    {% endblock %}
+</head>
+<body> 
+    {# Inclusion du menu #}
+	{% include "_non_connecte.html.twig" %}
+
+    <div class="container mb-5">
+    {{include("_message.html.twig")}}
+
+    {% block body %}        
             {% block javascripts %}
             {{ encore_entry_script_tags('app') }}
             {% endblock %}
             
-        {% endblock %}
-        <div>
-        {% include "_footer.html.twig" %}
-         </div>
-       
+    {% endblock %}
+
+    <div>
+    {% include "_footer.html.twig" %}
+    </div>
+    
+    </div>
     </body>
 </html>
 

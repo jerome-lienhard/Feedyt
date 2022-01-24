@@ -31,7 +31,6 @@ class EspaceController extends AbstractController
             $siteurl = $siteRepository->findAll();
         }
 
-
         foreach ($actu as $flu) {
             $affiche = $flu->getSite()->getSourceUrl();
             $menu[] = $affiche;
@@ -55,7 +54,6 @@ class EspaceController extends AbstractController
             }
             // Sinon s'il y a une demande d'ajout à la liste des suivi de flux
         } elseif ($rq->query->get("ajout_url")) {
-
 
             $request = $rq->query->get("ajout_url");
             $site = new Site();
@@ -101,17 +99,13 @@ class EspaceController extends AbstractController
 
             return $this->render('espace/index.html.twig', ["flux" => $flux, "url_ajout" => $request, "form" => $form->createView(), "news" => $Tabnews, "menu" => $menu, "lien_menu" => $lien_menu]);
         }
-
         $flux = NULL;
         $request = NULL;
-
-
         // sinon
         return $this->render('espace/index.html.twig', ["flux" => $flux, "url_ajout" => $request, "news" => $Tabnews, "menu" => $menu, "lien_menu" => $lien_menu, "site" => $siteurl]);
     }
 
     // Effacer la liste de flux
-
     #[Route('/espace/effacer-recherche', name: 'espace_effacer_recherche')]
     public function effacer_recherche(): Response
     {
@@ -134,7 +128,6 @@ class EspaceController extends AbstractController
             $flux = new Flux;
             $flux = $flux->RSS_Display($site_source, 10);
         }
-
 
         if ($siteRepository->findAll()) {
             $siteurl = $siteRepository->findAll();

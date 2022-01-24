@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Follow index{% endblock %}
+
+{% block body %}
+    <h1>Follow index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for follow in follows %}
+            <tr>
+                <td>{{ follow.id }}</td>
+                <td>
+                    <a href="{{ path('follow_show', {'id': follow.id}) }}">show</a>
+                    <a href="{{ path('follow_edit', {'id': follow.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="2">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('follow_new') }}">Create new</a>
+{% endblock %}

@@ -1,0 +1,181 @@
+@import '~bootstrap/scss/bootstrap';
+@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+@import '~@fortawesome/fontawesome-free/scss/solid';
+@import '~@fortawesome/fontawesome-free/scss/regular';
+@import '~@fortawesome/fontawesome-free/scss/brands';
+
+/*-- HOME--*/
+
+body {
+    height: 100vh;
+    font-family: roboto, sans-serif;
+    /*  background-image: url(https://assets.kpmg/is/image/kpmg/two-athletes-on-racing-track-against-blue-background:cq5dam.web.1082.378);*/
+    background-repeat: no-repeat;
+    background-size: 1920px 1920px;
+}
+
+#headerHome {
+    height: 100%;
+    width: auto;
+}
+
+#feed {
+    width: 300px;
+}
+
+.mainhome {
+    margin-top: 50px;
+    text-align: center;
+    font-size: larger;
+}
+
+.presentation {
+    text-align: center;
+    margin-top: 50px;
+    width: 100%;
+    height: 50%;
+    font-size: 50px;
+    font-weight: 400;
+    color: rgb(87, 84, 84)e;
+}
+
+#but {
+    height: 0;
+    width: auto;
+    padding: 5%;
+    margin-bottom: 5%;
+}
+
+#centre {
+    height: 20px;
+}
+
+#connexion,
+#inscription {
+    padding: 10px 50px 10px 50px;
+    margin: 0 20px 20px 20px;
+}
+
+#styled {
+    background-color: #7465DA;
+    border: none;
+    border-left: 1px solid rgba(255, 255, 255, .3);
+    border-top: 1px solid rgba(255, 255, 255, .3);
+    padding: 1rem;
+    width: 250px;
+    border-radius: 5px;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    -moz-backdrop-filter: blur(5px);
+    /*box-shadow: 4px 4px 60px rgba(0, 0, 0, .2);*/
+    color: whitesmoke;
+    font-weight: 500;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, .2);
+    transition: all .3s;
+    text-decoration: none;
+}
+
+#styled:hover {
+    background-color: rgb(170, 162, 148);
+    color: white;
+}
+
+#styled:active {
+    box-shadow: inset -2px -2px 3px rgba(255, 255, 255, .6), inset 2px 2px 3px rgba(0, 0, 0, .6);
+}
+
+h2 {
+    margin-top: 10px;
+}
+
+#a {
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding: 40px;
+    font-size: 40px;
+    /* border-radius: 5px;
+    box-shadow: 0px 1px 3px #777;*/
+}
+
+#articles {
+    display: flex;
+    padding: 0%;
+}
+
+#p1 {
+    padding: 20px;
+    text-justify: distribute
+}
+
+.montage {
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+#café {
+    width: 70%;
+    height: auto;
+    /* border: 0.5px solid #7465DA;*/
+    border-radius: 5px;
+    width: 50%;
+    /*border: 0.5px solid #7465DA;
+    border-radius: 5px;*/
+}
+
+#p2 {
+    padding: 20px;
+    text-justify: distribute;
+}
+
+#ps {
+    margin-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: justify;
+}
+
+#paragraphe {
+    padding: 12px;
+    margin-top: 20px;
+}
+
+#deroule {
+    max-width: 1200px;
+    overflow: hidden;
+    margin: 50px auto;
+    border-radius: 5px;
+    box-shadow: 0px 5px 10px #777;
+}
+
+#carousel {
+    width: 30000%;
+    height: 0;
+    padding-top: 10%;
+    background-color: #EDEDED;
+    background-size: contain;
+    background-image: url(../image/carouselHome/befunky-design.jpg);
+    animation: defilement2 2800s linear infinite;
+}
+
+@keyframes defilement2 {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(-75%, 0);
+    }
+}
+
+
+/*footer*/
+
+.btn {
+    background-color: #7465DA;
+    color: whitesmoke;
+}
+
+.bgfooter {
+    background-color: #281e69;
+    color: whitesmoke;
+}

@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Site{% endblock %}
+
+{% block body %}
+
+    <h1>Ajouter un nouveau flux à ma liste</h1>
+
+    {{ include('site/_form.html.twig') }}
+
+    <a href="{{ path('espace') }}">Terminer</a>
+{% endblock %}

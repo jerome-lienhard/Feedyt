@@ -163,10 +163,10 @@ class Flux
                         <div class='card-body'>
                             <h5 class='card-title fw-bold'>$title</h5><hr>";
             if ($description != false) {
-                if (stristr($description, '<a href=')) {
+                // if (stristr($description, '<a href=')) {
 
-                    $description = "<a target='_blank'" . str_replace('<a', "", $description);
-                }
+                //     $description = "<a target='_blank'" . str_replace('<a', "", $description);
+                // }
                 if (stristr($description, '<b')) {
 
                     $description = str_replace('<b>', "", $description);
@@ -177,7 +177,7 @@ class Flux
                     $description = str_replace('<p>', "", $description);
                     $description = str_replace('</p>', "", $description);
                 }
-                $page .= "<p class='card-text d-flex align-items-center justify-content-around'>$description </p>";
+                $page .= "<p class='card-text d-flex align-items-center justify-content-around flex-wrap'>$description </p>";
             }
 
             $page .= "<div class='text-center w-100'><a href=\"$link\" class='btn styled w-100' target='_blank'>Voir l'article <i class='fas fa-eye'></i></a></div>

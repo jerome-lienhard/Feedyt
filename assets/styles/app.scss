@@ -7,36 +7,37 @@
 /*-- HOME--*/
 
 body {
-
     height: 100vh;
     font-family: roboto, sans-serif;
     background-repeat: no-repeat;
     background-size: 1920px 1920px;
 }
-/**************************taille du header**********************/
-#headerHome {
 
+
+/**************************taille du header**********************/
+
+#headerHome {
     height: 100%;
     width: auto;
-
 }
+
+
 /****************************logo****************************/
+
 #feed {
-
     width: 300px;
-
 }
 
 .mainhome {
-
     margin-top: 50px;
     text-align: center;
     font-size: larger;
-
 }
-/**************************titre principal****************/
-.presentation {
 
+
+/**************************titre principal****************/
+
+.presentation {
     text-align: center;
     margin-top: 50px;
     margin-bottom: 50px;
@@ -45,12 +46,12 @@ body {
     font-size: 50px;
     font-weight: 400;
     color: rgb(87, 84, 84)e;
-
 }
 
-/**************style des boutons****************/
-#styled {
 
+/**************style des boutons****************/
+
+#styled {
     background-color: #7465DA;
     border: none;
     border-left: 1px solid rgba(255, 255, 255, .3);
@@ -66,7 +67,6 @@ body {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, .2);
     transition: all .3s;
     text-decoration: none;
-
 }
 
 #styled:hover {
@@ -80,32 +80,36 @@ body {
 
 
 /**********************titre paragraphe**************/
+
 #a {
     font-weight: bold;
     margin-top: 40px;
     margin-bottom: 20px;
     padding: 40px;
     font-size: 40px;
- 
 }
 
+
 /************div photos et paragraphes*************/
+
 .montage {
     margin-bottom: 20px;
     margin-top: 20px;
 }
+
+
 /*************images*************/
+
 #café {
     width: 70%;
     height: auto;
-    
     border-radius: 5px;
     width: 50%;
-  
 }
 
 
 /*********************paragraphes******************************/
+
 #ps {
     margin-top: 20px;
     padding-left: 10px;
@@ -113,7 +117,9 @@ body {
     text-align: justify;
 }
 
+
 /*********************carousel*********************************/
+
 #deroule {
     max-width: 1200px;
     overflow: hidden;
@@ -131,7 +137,10 @@ body {
     background-image: url(../image/carouselHome/befunky-design.jpg);
     animation: defilement2 2800s linear infinite;
 }
+
+
 /*****************animation du carousel****************/
+
 @keyframes defilement2 {
     0% {
         transform: translate(0, 0);
@@ -152,4 +161,27 @@ body {
 .bgfooter {
     background-color: #281e69;
     color: whitesmoke;
+}
+
+// **************Bootstrap navbar****************
+
+/* Show it is fixed to the top */
+
+body {
+    min-height: 75rem;
+    padding-top: 4.5rem;
+}
+
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+
+@media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+    }
 }

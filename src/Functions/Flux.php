@@ -182,7 +182,7 @@ class Flux
 
             $page .= "<div class='text-center w-100'><a href=\"$link\" class='btn styled w-100' target='_blank'>Voir l'article <i class='fas fa-eye'></i></a></div>
                         </div>
-                        <span class='ms-3'>Date de publication : $pubDate</span> 
+                        <span class='ms-3 date'>Date de publication : $pubDate</span> 
                     </div>";
         }
 

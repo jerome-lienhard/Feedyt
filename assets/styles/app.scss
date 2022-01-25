@@ -13,14 +13,14 @@ body {
     background-repeat: no-repeat;
     background-size: 1920px 1920px;
 }
-
+/**************************taille du header**********************/
 #headerHome {
 
     height: 100%;
     width: auto;
 
 }
-
+/****************************logo****************************/
 #feed {
 
     width: 300px;
@@ -34,7 +34,7 @@ body {
     font-size: larger;
 
 }
-
+/**************************titre principal****************/
 .presentation {
 
     text-align: center;
@@ -48,18 +48,9 @@ body {
 
 }
 
-
-
-
-/*#connexion,
-#inscription {
-
-    padding: 10px 50px 10px 50px;
-    margin: 0 20px 20px 20px;
-
-}*/
-
+/**************style des boutons****************/
 #styled {
+
     background-color: #7465DA;
     border: none;
     border-left: 1px solid rgba(255, 255, 255, .3);
@@ -70,12 +61,12 @@ body {
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     -moz-backdrop-filter: blur(5px);
-    /*box-shadow: 4px 4px 60px rgba(0, 0, 0, .2);*/
     color: whitesmoke;
     font-weight: 500;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, .2);
     transition: all .3s;
     text-decoration: none;
+
 }
 
 #styled:hover {
@@ -88,7 +79,7 @@ body {
 }
 
 
-
+/**********************titre paragraphe**************/
 #a {
     font-weight: bold;
     margin-top: 40px;
@@ -98,17 +89,12 @@ body {
  
 }
 
-
-#p1 {
-    padding: 20px;
-    text-justify: distribute
-}
-
+/************div photos et paragraphes*************/
 .montage {
     margin-bottom: 20px;
     margin-top: 20px;
 }
-
+/*************images*************/
 #café {
     width: 70%;
     height: auto;
@@ -118,11 +104,8 @@ body {
   
 }
 
-#p2 {
-    padding: 20px;
-    text-justify: distribute;
-}
 
+/*********************paragraphes******************************/
 #ps {
     margin-top: 20px;
     padding-left: 10px;
@@ -130,7 +113,7 @@ body {
     text-align: justify;
 }
 
-
+/*********************carousel*********************************/
 #deroule {
     max-width: 1200px;
     overflow: hidden;
@@ -148,7 +131,7 @@ body {
     background-image: url(../image/carouselHome/befunky-design.jpg);
     animation: defilement2 2800s linear infinite;
 }
-
+/*****************animation du carousel****************/
 @keyframes defilement2 {
     0% {
         transform: translate(0, 0);
@@ -159,7 +142,7 @@ body {
 }
 
 
-/*footer*/
+/******************footer********************/
 
 .btn {
     background-color: #7465DA;

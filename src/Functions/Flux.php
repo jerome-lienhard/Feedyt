@@ -3,6 +3,7 @@
 namespace App\Functions;
 
 use DOMDocument;
+use Error;
 use Exception;
 
 
@@ -32,9 +33,11 @@ class Flux
         $description = $tnl->firstChild->textContent;
 
         // Récupération de la date de publication
-        $tnl = $item->getElementsByTagName("pubDate");
-        $tnl = $tnl->item(0);
-        if ($tnl->firstChild != null) {
+        // dd($item->getElementsByTagName("pubDate")->item(0)->firstChild->textContent);
+
+        if ($item->getElementsByTagName("pubDate")->item(0)) {
+            $tnl = $item->getElementsByTagName("pubDate");
+            $tnl = $tnl->item(0);
             $pubDate = $tnl->firstChild->textContent;
         } else {
             $pubDate = "Non communiquée par le créateur de l'article";
@@ -147,9 +150,12 @@ class Flux
             $title = $article["title"];
             $link = $article["link"];
 
-
-            $pubDate = new \DateTime($article["pubDate"]);
-            $pubDate = $pubDate->format('d/m/Y');
+            if ($article['pubDate'] == "Non communiquée par le créateur de l'article") {
+                $pubDate = $article['pubDate'];
+            } else {
+                $pubDate = new \DateTime($article["pubDate"]);
+                $pubDate = $pubDate->format('d/m/Y');
+            }
 
             $description = $article["description"];
 
@@ -167,7 +173,10 @@ class Flux
                     $description = str_replace('</b>', "", $description);
                     $description = str_replace($title, "", $description);
                 }
-
+                if (stristr($description, '<p')) {
+                    $description = str_replace('<p>', "", $description);
+                    $description = str_replace('</p>', "", $description);
+                }
                 $page .= "<p class='card-text d-flex align-items-center justify-content-around'>$description </p>";
             }
 

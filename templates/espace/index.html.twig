@@ -37,13 +37,14 @@
 				{% endfor %}
 			{% endif %}
 
-			<hr>
-			<h2 id="ajouter">Ici découvre des nouveaux flux !</h2>
+			<hr id="ajouter" class="mt-5">
+			<div class="hauteur mt-5 pt-5">
+			<h2 >Ici découvre des nouveaux flux !</h2>
 			
 
 			<form method="GET" action="/espace/#ajouter" class="d-flex">
 			
-				<input type="text" class="form-control " name="url" placeholder="Tape l'url du site que tu souhaite suivre ici. Exemple : https://www.developpez.com/" value="{{url}}">
+				<input type="text" class="form-control " name="url" placeholder="Tape l'url du site que tu souhaite suivre ici. Exemple : https://www.developpez.com/" value="{{(url_ajout ?? url)}}">
 			
 				<button type="submit" class="btn btn-outline-success "><i class="fas fa-search"></i></button>
 				
@@ -80,6 +81,7 @@
 		
 		
 			{% endblock %}
+			</div>
 		</div>
 	</body>
 </html>

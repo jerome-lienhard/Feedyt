@@ -46,7 +46,6 @@ btnOpen.addEventListener('click', () => {
 });
 
 // Theme sombre
-
 let btnSombre = document.querySelector('#theme');
 let sidbar = document.querySelector('#mySidepanel');
 let dropdownBtn = document.querySelectorAll('.dropdown-btn');
@@ -58,56 +57,62 @@ let body = document.querySelector('body');
 let navBar = document.querySelector('.navbar');
 let date = document.querySelectorAll('.date');
 
+//Fonction pour passer en theme sombre
+function setBgDark() {
+    sidbar.className = "sidepanel bg-dark";
+    contain.className = "container bg-dark text-light";
+    body.className = "bg-dark";
 
+    navBar.className = "navbar navbar-expand navbar-dark fixed-top bg-dark menu_top skiplinks";
+    dropdownBtn.forEach(styl => {
+        styl.style.color = "white";
+    });
+    date.forEach(styl => {
+        styl.className = "date bg-dark ";
+    });
+    styleHover.forEach(styl => {
+        styl.style.color = "white";
+    });
+    card.forEach(styl => {
+        styl.className = "card-body bg-dark";
+        styl.style.color = "rgb(248, 249, 250)";
+    });
+    dpContainer.style.backgroundColor = "black";
 
+}
+// Fonction pour rétablir le theme
+function updateBg() {
+    sidbar.className = "sidepanel bg-light";
+    contain.className = "container bg-white text-dark";
+    body.className = "bg-white";
+    navBar.className = "navbar navbar-expand navbar-light fixed-top bg-light menu_top skiplinks";
+    dropdownBtn.forEach(styl => {
+        styl.style.color = "rgba(0, 0, 0, 0.685)";
+    });
+    date.forEach(styl => {
+        styl.className = "date bg-light ";
+    });
+    styleHover.forEach(styl => {
+        styl.style.color = "rgba(0, 0, 0, 0.685)";
+    });
+    card.forEach(styl => {
+        styl.className = "card-body bg-white";
+        styl.style.color = "black";
+    });
+    dpContainer.style.backgroundColor = "white";
+}
+// bouton pour passer du theme sombre au normal
 btnSombre.addEventListener('click', () => {
 
-    if (sidbar.className == "sidepanel bg-light") {
-
-        sidbar.className = "sidepanel bg-dark";
-        contain.className = "container bg-dark text-light";
-        body.className = "bg-dark";
-
-        navBar.className = "navbar navbar-expand navbar-dark fixed-top bg-dark menu_top skiplinks";
-
-
-        dropdownBtn.forEach(styl => {
-            styl.style.color = "white";
-        });
-        date.forEach(styl => {
-            styl.className = "date bg-dark ";
-        });
-        styleHover.forEach(styl => {
-            styl.style.color = "white";
-        });
-        card.forEach(styl => {
-            styl.className = "card-body bg-dark";
-            styl.style.color = "rgb(248, 249, 250)";
-        });
-        dpContainer.style.backgroundColor = "black";
+    if (localStorage.getItem('theme') == '') {
+        setBgDark();
+        localStorage.setItem('theme', 'dark');;
     } else {
-
-        sidbar.className = "sidepanel bg-light";
-        contain.className = "container bg-white text-dark";
-        body.className = "bg-white";
-
-        navBar.className = "navbar navbar-expand navbar-light fixed-top bg-light menu_top skiplinks";
-
-
-        dropdownBtn.forEach(styl => {
-            styl.style.color = "rgba(0, 0, 0, 0.685)";
-        });
-        date.forEach(styl => {
-            styl.className = "date bg-light ";
-        });
-        styleHover.forEach(styl => {
-            styl.style.color = "rgba(0, 0, 0, 0.685)";
-        });
-        card.forEach(styl => {
-            styl.className = "card-body bg-white";
-            styl.style.color = "black";
-        });
-        dpContainer.style.backgroundColor = "white";
-
+        updateBg();
+        localStorage.setItem('theme', '');
     }
 });
+// Vérfication du local storage
+if (localStorage.getItem('theme') == 'dark') {
+    setBgDark();
+}

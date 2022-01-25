@@ -32,6 +32,7 @@ body {
 .presentation {
     text-align: center;
     margin-top: 50px;
+    margin-bottom: 50px;
     width: 100%;
     height: 50%;
     font-size: 50px;
@@ -39,16 +40,8 @@ body {
     color: rgb(87, 84, 84)e;
 }
 
-#but {
-    height: 0;
-    width: auto;
-    padding: 5%;
-    margin-bottom: 5%;
-}
 
-#centre {
-    height: 20px;
-}
+
 
 #connexion,
 #inscription {
@@ -84,24 +77,17 @@ body {
     box-shadow: inset -2px -2px 3px rgba(255, 255, 255, .6), inset 2px 2px 3px rgba(0, 0, 0, .6);
 }
 
-h2 {
-    margin-top: 10px;
-}
+
 
 #a {
     font-weight: bold;
-    margin-top: 10px;
+    margin-top: 40px;
     margin-bottom: 20px;
     padding: 40px;
     font-size: 40px;
-    /* border-radius: 5px;
-    box-shadow: 0px 1px 3px #777;*/
+ 
 }
 
-/*#articles {
-    display: flex;
-    padding: 0%;
-}*/
 
 #p1 {
     padding: 20px;

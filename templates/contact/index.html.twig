@@ -1,5 +1,5 @@
 {% extends 'base.html.twig' %}
-			
+
 {% block stylesheet %} {{ encore_entry_link_tags('register') }}
 {% endblock %}
 {% block javascripts %} {{ encore_entry_script_tags('register') }}
@@ -7,61 +7,61 @@
 
 {% block title %}contact
 {% endblock %}
-		
+
 
 {% block body %}
-{% include "_message.html.twig" %}
+	{% include "_message.html.twig" %}
 
-<div class="container">
-	<header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+	<div class="container">
+		<header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
 
 
-		<div class="row d-flex justify-content-center align-items-center">
-			<div class="col-lg-12 col-xl-11">
-				<div class="card text-black" style="border-radius: 25px;">
-					<div class="card-body md-5">
-						<div class="row justify-content-center">
-							<div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+			<div class="row d-flex justify-content-center align-items-center">
+				<div class="col-lg-12 col-xl-11">
+					<div class="card text-black" style="border-radius: 25px;">
+						<div class="card-body md-5">
+							<div class="row justify-content-center">
+								<div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
 
-								<p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Contact</p>
+									<p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Contact</p>
 
-								<div class="mx-1 mx-md-4"> {{ form_start(contactForm) }}
-									<div class="d-flex flex-row align-items-center mb-4">
-										<i class="fas fa-user fa-lg me-3 fa-fw"></i>
-										<div class="form-outline flex-fill mb-0"> {{ form_errors( contactForm.message, )}} {{ form_widget(contactForm.message, {
+									<div class="mx-1 mx-md-4"> {{ form_start(contactForm) }}
+										<div class="d-flex flex-row align-items-center mb-4">
+											<i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+											<div class="form-outline flex-fill mb-0"> {{ form_errors( contactForm.email, )}} {{ form_widget(contactForm.email, {
+                    attr: { placeholder: "Email" }
+   } )}}
+
+
+											</div>
+										</div>
+
+										<div class="d-flex flex-row align-items-center mb-4">
+											<i class="fas fa-pencil-alt prefix"></i>
+											<div class="form-outline flex-fill mb-0"> {{ form_errors( contactForm.message, )}} {{ form_widget(contactForm.message, {
                     attr: { placeholder: "votre message" }
                 } )}}
 
 
+											</div>
 										</div>
+
+										<div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4 p-2">
+											<button type="submit" class="btn btn-primary btn-lg">Envoyer</button>
+										</div> {{ form_end(contactForm) }}
 									</div>
 
-									<div class="d-flex flex-row align-items-center mb-4">
-										<i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
-										<div class="form-outline flex-fill mb-0"> {{ form_errors( contactForm.email, )}} {{ form_widget(contactForm.email, {
-                    attr: { placeholder: "Email" }
-   } )}}
-										</div>
-									</div>
 
-									<div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4 p-2">
-										<button type="submit" class="btn btn-primary btn-lg">Envoyer</button>
-									</div> {{ form_end(contactForm) }}
 								</div>
+								<div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
 
-
-							</div>
-							<div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
-
-								<img src="https://static.vecteezy.com/ti/vecteur-libre/p1/1263872-contact-us-customer-support-concept" class="img-fluid" alt="illustration d'une femme qui entre en contact avec le service client">
+									<img src="https://static.vecteezy.com/ti/vecteur-libre/p1/1263872-contact-us-customer-support-concept" class="img-fluid" alt="illustration d'une femme qui entre en contact avec le service client">
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-</header>
-</div>
-</div>
-{% endblock %}
-
+		</header>
+	</div>
+</div>{% endblock %}

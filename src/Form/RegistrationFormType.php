@@ -22,7 +22,7 @@ class RegistrationFormType extends AbstractType
             ->add('email', EmailType::class)
 
             ->add('agreeTerms', CheckboxType::class, [
-                'label' => "Je reconnais avoir lu et compris les CGU et je les accepte",
+                'label' => "J'ai lu et j'accepte",
 
                 'mapped' => false,
                 'constraints' => [

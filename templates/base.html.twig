@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <linkrel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">    
+   
     {% block stylesheets %}
         {{ encore_entry_link_tags('app') }} 
         {{ encore_entry_link_tags('register') }}
@@ -29,7 +30,8 @@
             {% include "_footer.html.twig" %}
         </div>
 
-    
+    </div>
+    <script src="cookiechoices.js"></script><script>document.addEventListener('DOMContentLoaded', function(event){cookieChoices.showCookieConsentBar('Ce site utilise des cookies pour vous offrir le meilleur service. En poursuivant votre navigation, vous acceptez l’utilisation des cookies.', 'J’accepte', 'En savoir plus', 'http://www.feedytech.com/mentions-legales/');});</script>
     </body>
 </html>
 

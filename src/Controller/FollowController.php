@@ -42,7 +42,7 @@ class FollowController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}', name: 'follow_show', methods: ['GET'])]
+    #[Route('/show/{id}', name: 'follow_show', methods: ['GET'])]
     public function show(Follow $follow): Response
     {
         return $this->render('follow/show.html.twig', [
@@ -71,11 +71,11 @@ class FollowController extends AbstractController
     #[Route('/{id}', name: 'follow_delete', methods: ['POST'])]
     public function delete(Request $request, Follow $follow, EntityManagerInterface $entityManager): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$follow->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $follow->getId(), $request->request->get('_token'))) {
             $entityManager->remove($follow);
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('follow_index', [], Response::HTTP_SEE_OTHER);
+        return $this->redirectToRoute('espace', [], Response::HTTP_SEE_OTHER);
     }
 }

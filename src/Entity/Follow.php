@@ -22,6 +22,9 @@ class Follow
     #[ORM\Column(type: 'string', length: 100, nullable: true)]
     private $categorie;
 
+    #[ORM\Column(type: 'string', length: 255, nullable: true)]
+    private $Name;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -59,6 +62,18 @@ class Follow
     public function setCategorie(?string $categorie): self
     {
         $this->categorie = $categorie;
+
+        return $this;
+    }
+
+    public function getName(): ?string
+    {
+        return $this->Name;
+    }
+
+    public function setName(?string $Name): self
+    {
+        $this->Name = $Name;
 
         return $this;
     }

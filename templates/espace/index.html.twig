@@ -7,7 +7,6 @@
 		</title>
 		<link
 		rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
-		{# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
 		{% block stylesheet %} {{ encore_entry_link_tags('espace') }}
         
 		{% endblock %}
@@ -20,6 +19,7 @@
 
   	<body>
    		<div class="container ">
+
 		    <aside>
 	  			{% include "_menu_left.html.twig" %}
 			</aside>
@@ -50,6 +50,7 @@
 				<a href=" {{path("espace_effacer_recherche")}} " class="btn btn-outline-danger">Effacer</a>
 
 			</form>
+			{% include "_message.html.twig" %}
 			{# Si l'utilisateur veut ajouter le flux à sa liste #}
 			{% if form is defined %}
 			<div class="alert alert-success form-control mt-3">
@@ -59,6 +60,7 @@
 				<button class="btn styled w-25 mt-3">{{ button_label|default('Est-ce bien ce lien que tu veux ajouter ?') }}</button>
 				{{ form_end(form) }}
 			</div>
+			
 				{{flux|raw}}
 
 			{% endif %}
@@ -68,7 +70,7 @@
 			{% if flux %}
 				<form method="GET" action="/espace/#ajouter">
 					<input type="hidden" name="ajout_url" value="{{(url_ajout ?? url)}}">
-					<button type="submit" class="btn btn-outline-success w-100">Ajouter ce flux à ma liste</button> 
+					<button type="submit" class="btn btn-success w-100">Ajouter ce flux à ma liste</button> 
 				</form>
 				{{flux|raw}}
 			{% else %}

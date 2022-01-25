@@ -34,7 +34,12 @@ class Flux
         // Récupération de la date de publication
         $tnl = $item->getElementsByTagName("pubDate");
         $tnl = $tnl->item(0);
-        $pubDate = $tnl->firstChild->textContent;
+        if ($tnl->firstChild != null) {
+            $pubDate = $tnl->firstChild->textContent;
+        } else {
+            $pubDate = "Non communiquée par le créateur de l'article";
+        }
+
 
         $y["title"] = $title;
         $y["link"] = $link;

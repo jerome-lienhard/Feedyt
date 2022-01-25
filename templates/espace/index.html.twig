@@ -43,11 +43,11 @@
 
 			<form method="GET" action="/espace/#ajouter" class="d-flex">
 			
-				<input type="text" class="form-control" name="url" placeholder="Tape l'url du site que tu souhaite suivre ici. Exemple : https://www.developpez.com/" value="{{url}}">
+				<input type="text" class="form-control " name="url" placeholder="Tape l'url du site que tu souhaite suivre ici. Exemple : https://www.developpez.com/" value="{{url}}">
 			
-				<button type="submit" class="btn btn-outline-success">Rechercher</button>
+				<button type="submit" class="btn btn-outline-success "><i class="fas fa-search"></i></button>
 				
-				<a href=" {{path("espace_effacer_recherche")}} " class="btn btn-outline-danger">Effacer</a>
+				<a href=" {{path("espace_effacer_recherche")}} " class="btn btn-outline-danger"><i class="far fa-trash-alt"></i></a>
 
 			</form>
 			{% include "_message.html.twig" %}
@@ -70,7 +70,7 @@
 			{% if flux %}
 				<form method="GET" action="/espace/#ajouter">
 					<input type="hidden" name="ajout_url" value="{{(url_ajout ?? url)}}">
-					<button type="submit" class="btn btn-success w-100">Ajouter ce flux à ma liste</button> 
+					<button type="submit" class="btn btn-success w-100">Ajouter ce flux à ma liste </button> 
 				</form>
 				{{flux|raw}}
 			{% else %}

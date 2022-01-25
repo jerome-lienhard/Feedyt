@@ -10,27 +10,27 @@
 		<div class="collapse navbar-collapse text-white" >
 			<ul class="navbar-nav ms-auto mb-2 mb-lg-0" id="liens">	
 				<li class="nav-item mr-1">
-					<a href="{{path ("home")}}" class="btn px-3 me-2 nav-link text-white ">Accueil</a>
+					<a href="{{path ("home")}}" class="btn px-3 me-2 nav-link text-white ">Accueil <i class="fas fa-home"></i></a>
 				</li>
 				{% if is_granted("ROLE_USER") %}
 				<li class="nav-item mr-1">
-					<a href="{{path ("app_logout")}}" class="btn me-2 nav-link text-white ">Deconnexion</a>
+					<a href="{{path ("app_logout")}}" class="btn me-2 nav-link text-white ">Deconnexion <i class="fa fa-sign-out-alt"></i> </a>
 				</li>
 				{% else %}
 				<li class="nav-item mr-1">
-					<a href="{{path ("app_login")}}" class="btn me-2 nav-link text-white ">Connexion</a>
+					<a href="{{path ("app_login")}}" class="btn me-2 nav-link text-white ">Connexion <i class="fa fa-sign-in-alt"></i></a>
 				</li>
 				{% endif %}
 			</ul>
 			<ul class="dropdown-menu" aria-labelledby="navbarDropdown" id="navbarCollapse">
 				<li>
-					<a class="dropdown-item text-white " href="{{path ("home")}}">Accueil</a>
+					<a class="dropdown-item text-white " href="{{path ("home")}}">Accueil <i class="fas fa-home"></i></a>
 				</li>
 				<li>
-					<a class="dropdown-item text-white " href="{{path ("app_login")}}">Connexion</a>
+					<a class="dropdown-item text-white " href="{{path ("app_login")}}">Connexion <i class="fa fa-sign-in-alt"></i></a>
 				</li>
 				<li>
-					<a class="dropdown-item text-white " href="{{path ("app_login")}}">Deconnexion</a>
+					<a class="dropdown-item text-white " href="{{path ("app_login")}}">Deconnexion <i class="fa fa-sign-out-alt"></i> </a>
 				</li>
 				<li><hr class="dropdown-divider"></li>
 			</ul>

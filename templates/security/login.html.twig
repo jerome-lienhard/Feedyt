@@ -10,12 +10,9 @@
 {% endblock %}
 
 {% block body %}
-{% include "_message.html.twig" %}
-	<form method="post">
-		{% if error %}
-			<div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-		{% endif %}
-
+ 
+	<form method="post" class="mt-5">
+	
 		{% if app.user %}
 			<div class="mb-3 font-weight-bolder  font-size: 14px">
 				Bonjour {{ app.user.username }},
@@ -23,9 +20,10 @@
 		{% endif %}
 
 		<div class="container">
+		{% if error %}
+			<div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+		{% endif %}
 			<header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4">
-
-
 				<div class="row d-flex justify-content-center align-items-center h-100">
 					<div class="col-lg-12 col-xl-11">
 						<div class="card text-black" style="border-radius: 25px;">

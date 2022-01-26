@@ -1,6 +1,9 @@
 import './styles/espace.scss';
 import './bootstrap';
-// Dropdown menu de la sidbar
+
+// ********************************************************
+//                 Dropdown menu de la sidbar
+// ***************************************************************
 var dropdown = document.getElementsByClassName("dropdown-btn");
 var i;
 
@@ -16,7 +19,9 @@ for (i = 0; i < dropdown.length; i++) {
     });
 }
 
-// Hide and show de la sidebar
+// ************************************************************
+//              Hide and show de la sidebar
+// ***************************************************************
 let btn = document.querySelector("#btn-nav");
 let liOuv = document.querySelector("#li-ouv");
 let nav = document.querySelector(".sidepanel");
@@ -45,7 +50,9 @@ btnOpen.addEventListener('click', () => {
     }
 });
 
-// Theme sombre
+// *************************************************************
+//                      Theme sombre
+// ***************************************************************
 let btnSombre = document.querySelector('#theme');
 let sidbar = document.querySelector('#mySidepanel');
 let dropdownBtn = document.querySelectorAll('.dropdown-btn');
@@ -57,6 +64,7 @@ let body = document.querySelector('body');
 let navBar = document.querySelector('.navbar');
 let date = document.querySelectorAll('.date');
 
+// ***************************************************************
 //Fonction pour passer en theme sombre
 function setBgDark() {
     sidbar.className = "sidepanel bg-dark";
@@ -80,6 +88,8 @@ function setBgDark() {
     dpContainer.style.backgroundColor = "black";
 
 }
+
+// ***************************************************************
 // Fonction pour rétablir le theme
 function updateBg() {
     sidbar.className = "sidepanel bg-light";
@@ -101,7 +111,9 @@ function updateBg() {
     });
     dpContainer.style.backgroundColor = "white";
 }
-// bouton pour passer du theme sombre au normal
+
+// ***************************************************************
+// Bouton pour passer du theme sombre au normal
 btnSombre.addEventListener('click', () => {
 
     if (localStorage.getItem('theme') == '') {
@@ -112,6 +124,8 @@ btnSombre.addEventListener('click', () => {
         localStorage.setItem('theme', '');
     }
 });
+
+// ***************************************************************
 // Vérfication du local storage
 if (localStorage.getItem('theme') == 'dark') {
     setBgDark();

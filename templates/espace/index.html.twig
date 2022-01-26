@@ -3,10 +3,9 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>{% block title %}Mon espace | FeedyTech{% endblock %}
-		</title>
-		<link
-		rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>{% block title %}Mon espace | FeedyTech{% endblock %}</title>
+		<link rel="shortcut icon" href="../image/logo_small.ico" type="image/x-icon">    
 		{% block stylesheet %} {{ encore_entry_link_tags('espace') }}
         
 		{% endblock %}
@@ -19,10 +18,11 @@
 
   	<body>
    		<div class="container" id="contain">
-
+		   {# Menu Sidbar #}
 		    <aside>
 	  			{% include "_menu_left.html.twig" %}
 			</aside>
+			{# Menu top #}
 			<div class="menu">
 			{% include "_nav_espace.html.twig" %}
 			</div>
@@ -30,6 +30,7 @@
 			{% set url = ""%}
 			{% block body %} 
 
+			{# Flux d'infos que l'utilisateur suit #}
 			<h1 class="titre_follow">Tes dernières infos</h1>
 			{% if news is defined %}
 				{% for new in news %}
@@ -39,9 +40,9 @@
 
 			<hr id="ajouter" class="mt-5">
 			<div class="hauteur mt-5 pt-5">
-			<h2 >Ici découvre des nouveaux flux !</h2>
-			
 
+			{# Nouveaux flux d'infos suite à une recherche #}
+			<h2 >Ici découvre des nouveaux flux !</h2>
 			<form method="GET" action="/espace/#ajouter" class="d-flex">
 			
 				<input type="text" class="form-control " name="url" placeholder="Tape l'url du site que tu souhaite suivre ici. Exemple : https://www.developpez.com/" value="{{(url_ajout ?? url)}}">
@@ -52,6 +53,7 @@
 
 			</form>
 			{% include "_message.html.twig" %}
+
 			{# Si l'utilisateur veut ajouter le flux à sa liste #}
 			{% if form is defined %}
 			<div class="alert alert-success form-control mt-3">
@@ -61,9 +63,7 @@
 				<button class="btn styled w-25 mt-3">{{ button_label|default('Est-ce bien ce lien que tu veux ajouter ?') }}</button>
 				{{ form_end(form) }}
 			</div>
-			
 				{{flux|raw}}
-
 			{% endif %}
 
 			{# Si l'utilisateur affiche le flux le bouton ajouter apparait #}

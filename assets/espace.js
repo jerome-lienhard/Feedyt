@@ -27,12 +27,14 @@ let liOuv = document.querySelector("#li-ouv");
 let nav = document.querySelector(".sidepanel");
 let menuTop = document.querySelector('#menu_top');
 let btnOpen = document.querySelector("#btn-nav-open");
+let logo = document.querySelector("#logo2");
 console.log(menuTop);
 btn.addEventListener('click', () => {
     if (nav.style.width = "280px") {
         nav.style.width = "0px";
         liOuv.style.display = "block";
         btn.style.display = "none";
+        logo.style.opacity = "1";
         btnOpen.style.display = "block";
         menuTop.style.marginLeft = 0;
 
@@ -45,6 +47,7 @@ btnOpen.addEventListener('click', () => {
         nav.style.width = "280px";
         liOuv.style.display = "none";
         btn.style.display = "block";
+        logo.style.opacity = "0";
         btnOpen.style.display = "none";
         menuTop.style.marginLeft = "280px";
     }
@@ -63,6 +66,8 @@ let card = document.querySelectorAll('.card-body');
 let body = document.querySelector('body');
 let navBar = document.querySelector('.navbar');
 let date = document.querySelectorAll('.date');
+let textColor = document.querySelectorAll('.text-white');
+let footer = document.querySelector('footer');
 
 // ***************************************************************
 //Fonction pour passer en theme sombre
@@ -71,12 +76,17 @@ function setBgDark() {
     contain.className = "container bg-dark text-light";
     body.className = "bg-dark";
 
+
+
     navBar.className = "navbar navbar-expand navbar-dark fixed-top bg-dark menu_top skiplinks";
     dropdownBtn.forEach(styl => {
         styl.style.color = "white";
     });
+    textColor.forEach(styl => {
+        styl.className = "text-white";
+    });
     date.forEach(styl => {
-        styl.className = "date bg-dark ";
+        styl.className = "ps-3 date bg-dark ";
     });
     styleHover.forEach(styl => {
         styl.style.color = "white";
@@ -86,6 +96,7 @@ function setBgDark() {
         styl.style.color = "rgb(248, 249, 250)";
     });
     dpContainer.style.backgroundColor = "black";
+    footer.className = "bg-dark text-white";
 
 }
 
@@ -95,12 +106,16 @@ function updateBg() {
     sidbar.className = "sidepanel bg-light";
     contain.className = "container bg-white text-dark";
     body.className = "bg-white";
+
     navBar.className = "navbar navbar-expand navbar-light fixed-top bg-light menu_top skiplinks";
+    textColor.forEach(styl => {
+        styl.className = "text-dark";
+    });
     dropdownBtn.forEach(styl => {
         styl.style.color = "rgba(0, 0, 0, 0.685)";
     });
     date.forEach(styl => {
-        styl.className = "date bg-light ";
+        styl.className = "ps-3 date bg-light ";
     });
     styleHover.forEach(styl => {
         styl.style.color = "rgba(0, 0, 0, 0.685)";
@@ -110,6 +125,7 @@ function updateBg() {
         styl.style.color = "black";
     });
     dpContainer.style.backgroundColor = "white";
+    footer.className = "bg-light text-dark";
 }
 
 // ***************************************************************
@@ -129,4 +145,6 @@ btnSombre.addEventListener('click', () => {
 // Vérfication du local storage
 if (localStorage.getItem('theme') == 'dark') {
     setBgDark();
+} else {
+    updateBg();
 }

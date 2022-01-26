@@ -1,9 +1,11 @@
 {# Navbar dans la page mon espace #}
-<nav class="navbar navbar-expand navbar-light fixed-top bg-light menu_top skiplinks">
+<nav class="navbar navbar-expand navbar-light fixed-top bg-light menu_top ">
   <div class="collapse navbar-collapse" id="navbarCollapse">
     <ul class="navbar-nav w-25 justify-content-start">
-      <li class="nav-item" id="li-ouv">
-        <button class="btn btn-outline-secondary" id="btn-nav-open" >&#9776;</button>
+      <li class="nav-item d-flex justify-content_between align-items-center" id="li-ouv">
+        <button class="btn btn-outline-secondary" id="btn-nav-open" >&#9776;</button>  
+        {# Logo #}
+        <a href="{{path ("home")}}"><div class="photo-profil" id="logo"><img src="{{ chemin ?? '' }}./image/logo_small.png"  id="logo2" alt="logo FeedyTech"></div></a>
       </li>
       </ul>
       <ul class="navbar-nav w-75 justify-content-around">

@@ -158,6 +158,10 @@ body {
 
 /******************footer********************/
 
+footer {
+    background-color: #3f51b5;
+}
+
 .btn {
     background-color: #7465DA;
     color: whitesmoke;
@@ -170,6 +174,10 @@ body {
 
 .footer {
     min-height: 20vh;
+}
+
+.copy {
+    background-color: rgba(0, 0, 0, 0.2);
 }
 
 // **************Bootstrap navbar****************

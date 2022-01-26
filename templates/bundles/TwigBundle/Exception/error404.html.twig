@@ -1,11 +1,11 @@
 {% extends "base.html.twig" %}
 {% block body %}
-<h1 class="alert alert-danger">ERREUR 404: page non trouvée</h1>
-<img src="https://www.vecteezy.com/vector-art/4603676-under-construction-page-tiny-people-error-404-illustration" alt="">
-<a href="{{ path("home") }}">
-<i class="fa fa-home"></i>Retour à la page d'accueil
-</a>
+<div class="container">
+    <h1 class="alert alert-danger">ERREUR 404: page non trouvée</h1>
+    <a href="{{ path("home") }}" class="btn btn-outline-primary">
+    <i class="fa fa-home"></i>Retour à la page d'accueil</a>
+</div>
 {% endblock %}
 
 
-{ % block title %}Erreur 404 {% endblock %}
+{% block title %}Erreur 404{% endblock %}

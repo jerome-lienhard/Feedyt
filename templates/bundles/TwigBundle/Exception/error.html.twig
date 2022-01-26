@@ -1,11 +1,10 @@
 {% extends "base.html.twig" %}
-
 {% block body %}
 <div class="container">
-    <h1 class="alert alert-danger">ERREUR 403: vous n'avez pas accès a cette page</h1>
+    <h1 class="alert alert-danger">ERREUR: Une erreur est survenue...</h1>
     <a href="{{ path ("home") }}" class="btn btn-outline-primary">
     <i class="fa fa-home"></i>Retour à la page d'accueil</a>
 </div>
 {% endblock %}
 
-{% block title %}Erreur 403{% endblock %}
+{% block title %}Erreur{% endblock %}

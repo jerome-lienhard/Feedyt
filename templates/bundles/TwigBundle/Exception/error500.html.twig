@@ -1,9 +1,10 @@
 {% extends "base.html.twig" %}
 {% block body %}
-<h1 class="alert alert-danger">ERREUR 500: une erreur est survenue...</h1>
-<a href="{{ path ("home") }}">
-<i class="fa fa-home"></i>Retour à la page d'accueil
-</a>
-{% {% endblock %}}
+<div class="container">
+    <h1 class="alert alert-danger">ERREUR 500: une erreur est survenue...</h1>
+    <a href="{{ path ("home") }}" class="btn btn-outline-primary">
+    <i class="fa fa-home"></i>Retour à la page d'accueil</a>
+</div>
+{% endblock %}
 
-{ % block title %}Erreur 500{% endblock %}
+{% block title %}Erreur 500{% endblock %}

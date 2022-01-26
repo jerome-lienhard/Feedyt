@@ -36,7 +36,7 @@ btn.addEventListener('click', () => {
         btn.style.display = "none";
         logo.style.opacity = "1";
         btnOpen.style.display = "block";
-        menuTop.style.marginLeft = 0;
+        menuTop.style.marginLeft = "0px";
 
 
     }
